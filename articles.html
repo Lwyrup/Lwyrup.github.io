@@ -3,25 +3,28 @@ layout: default
 title: Articles
 permalink: /articles/
 ---
+<div class="container">
+  <h4 class="sub_text">Articles</h4>
+  <hr>
 
-<h1>Articles</h1>
+  {% for post in site.posts %}
+    {% assign currentDate = post.date | date: "%B" %}
 
-{% for post in site.posts %}
-  {% assign currentDate = post.date | date: "%B" %}
-
-  {% if currentDate != myDate %}
-    {% unless forloop.first %}</ul>{% endunless %}
+    {% if currentDate != myDate %}
+      {% unless forloop.first %}</ul></div>{% endunless %}
+      
+      <div class="article_list">
+      <h2>{{ currentDate }}</h2>
+      
+      <ul>
+        {% assign myDate = currentDate %}
+    {% endif %}
+      
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      ({{ post.date | date: "%B %-d, %Y" }})
+    </li>
     
-    <h2>{{ currentDate }}</h2>
-    
-    <ul>
-      {% assign myDate = currentDate %}
-  {% endif %}
-    
-  <li>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-    ({{ post.date | date: "%B %-d, %Y" }})
-  </li>
-  
-  {% if forloop.last %}</ul>{% endif %}
-{% endfor %}
+    {% if forloop.last %}</ul></div>{% endif %}
+  {% endfor %}
+</div>
