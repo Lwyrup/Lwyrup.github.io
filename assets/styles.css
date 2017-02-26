@@ -88,6 +88,21 @@ ul{
 	text-decoration: none;
 	color:black;
 }
+.caption{
+	font-style: italic;
+	color: #c5c5c5;
+	font-size: 14px;
+	text-align: right;
+}
+.callout > span{
+	font-weight: bolder;
+	font-style: italic;
+}
+.callout{
+	background-color: honeydew;
+	margin: auto -8px;
+	padding: 14px;
+}
 
 /* Action selectors */
 
@@ -174,21 +189,8 @@ ul{
 	
 	
 	
-	.caption{
-		font-style: italic;
-		color: #c5c5c5;
-		font-size: 14px;
-		text-align: right;
-	}
-	.callout > span{
-		font-weight: bolder;
-		font-style: italic;
-	}
-	.callout{
-		background-color: honeydew;
-		margin: auto -8px;
-		padding: 14px;
-	}
+
+	
 }
 
 
