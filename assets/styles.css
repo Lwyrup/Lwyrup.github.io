@@ -20,11 +20,15 @@ header{
 	
 	
 }
-header h1{
+header > a > h1 {
     font-family: 'Bahiana', cursive;
     font-size: 35px;
-    letter-spacing: 6px;
+    letter-spacing: 3px;
     margin: 0px;
+    color: black;
+}
+header > a{
+	text-decoration: none;
 }
 header h2{
 	color: #949494;
@@ -37,6 +41,7 @@ h3{
 }
 hr{
 	border-color: rgba(2, 2, 2, 0.14);
+	clear: both;
 }
 a{
 	color: #757575;
@@ -68,7 +73,7 @@ ul{
     text-align: center;
     padding: 2px;
     border-radius: 100%;
-    color: #f9f9f9;
+    color: #f1efef;
 }
 .external .fa-github{
 	color: #b5b1b1;
@@ -136,6 +141,21 @@ ul{
    	font-size: 26px;
    	color: #03a9f4;
 }
+.footnote{
+	border: 1px solid #96b1b6;
+	margin: auto 4px;
+	padding: 0px 5px;
+	border-radius: 100%;
+	background-color: lightcyan;
+}
+.article_preview img{
+	width: 225px;
+	float: left;
+    border: 2px solid;
+    padding: 8px;
+    margin: 0px 10px 25px 10px;
+}
+
 
 /* Gist syntax coloring */
 
@@ -144,7 +164,20 @@ ul{
 .gist .pl-en{color:#00bcd4 !important;}
 .gist-meta{display:none;}
 
+.cp, .nt, .m, .mi, .k { color: red; }
+.na, .nf{ color: #00c256; }
+.s, .s2 { color: #caca6b; }
+.nl, .no, .nb, .kd{ color: #23bbff; }
+.c1 { color: darkgray; }
 
+.highlight { 
+	background-color: whitesmoke;
+	overflow-x: scroll;
+	padding: 20px;
+	border: 1px solid lightgray;
+	border-radius: 6px;
+	margin: 40px auto;
+}
 
 
 /* When viewed on a screen less than 570px */
@@ -155,14 +188,16 @@ ul{
 		z-index: 2;
 		padding: 15px;
 		background-color: #404040;
-		color: white;
+	}
+	h1{
+		color: white !important;
 	}
 	.header_links{
 		position: absolute;
 		top: 0px;
 		width: 100%;
 		z-index: 1;
-		background-color: #f9f9f9;
+		background-color: #f1efef;
 		box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.6);
 		display: flex;
 	    justify-content: space-between;
