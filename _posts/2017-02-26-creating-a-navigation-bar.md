@@ -2,15 +2,17 @@
 title: "How to Create a Dynamic Navigation Bar"
 ---
 
+<img src="http://media4.s-nbcnews.com/j/newscms/2016_36/1685951/ss-160826-twip-05_8cf6d4cb83758449fd400c7c3d71aa1f.nbcnews-ux-2880-1000.jpg">
 If you've spent time on the Internet then chances are you've seen somewhere a site with a drop down menu or navigation menu. They are handy little things that allow more space on the page for content, this is especially useful for mobile views where you have less space to fit content. So, let's delve into and start typing one up.
+
 
 ### Setup
 
-Go create a new folder, name it whatever you would like. Within that folder create a new file named *index.html*, another new file named *styles.css*, and lastly a file name *toggle-navbar.js*. The html file[^1] will dictate the page's content, our css file[^2] will deal with the styling of the pages content, and our JavaScript(js) will make the navigation bar toggle on/off. Now let us begin with our html file.
+Go create a new folder, name it whatever you would like. Within that folder create a new file named *index.html*, another new file named *styles.css*, and lastly a file name *toggle-navbar.js*. The html file[^1] will dictate the page's content, our css file[^2] will deal with the styling of the pages content, and our JavaScript[^3] will make the navigation bar toggle on/off. Now let us begin with our html file.
 
 ### HTML
 
-Starting with our html, open up the file with a text editor so we may begin. Right now we have a blank file and that will not yield content for our viewing pleasure. So lets start with a basic html tag[^3] setup.
+Starting with our html, open up the file with a text editor so we may begin. Right now we have a blank file and that will not yield content for our viewing pleasure. So lets start with a basic html tag[^4] setup.
 
 ```html
 <!DOCTYPE html>
@@ -33,7 +35,7 @@ Starting with our html, open up the file with a text editor so we may begin. Rig
 
 
 
-Now we have an empty frame to fill with our navigation bar, but just saying add a nav-bar is just vague. So first we need to define what that is in simple terms such as shapes. A navigation bar is essentially just two boxes with stuff in them. Alright, that definition give us some direction to start. So, lets start basic with two boxes, or divs[^4], one for the always shown header part, and another for the actual navigation drop drown. Inside our body tags we will insert our two boxes.
+Now we have an empty frame to fill with our navigation bar, but just saying add a nav-bar is just vague. So first we need to define what that is in simple terms such as shapes. A navigation bar is essentially just two boxes with stuff in them. Alright, that definition give us some direction to start. So, lets start basic with two boxes, or divs[^5], one for the always shown header part, and another for the actual navigation drop drown. Inside our body tags we will insert our two boxes.
 
 ```html
 <body>
@@ -42,7 +44,7 @@ Now we have an empty frame to fill with our navigation bar, but just saying add 
 </body>
 
 ```
-We now have our two divs, each holding some text to help identify them but, lets say we wanted to color them differently. We wont yet but, we will need to name the divs so we can call on one of them rather than both. Using attributes[^5] will accomplish this, so lets give our divs names.
+We now have our two divs, each holding some text to help identify them but, lets say we wanted to color them differently. We wont yet but, we will need to name the divs so we can call on one of them rather than both. Using attributes[^6] will accomplish this, so lets give our divs names.
 
 ```html
 <body>
@@ -50,7 +52,7 @@ We now have our two divs, each holding some text to help identify them but, lets
 	<div id="box_2">and I'm the drop down box</div>
 </body>
 ```
-Perfect! Now we have named them box_1 and box_2 respectively. The last thing we need to add to our html is a link to our css file and our JavaScript. So in our head we will create a link tag with a rel[^6] attribute and a href[^7] attribute, and a script tag with a src tag.
+Perfect! Now we have named them box_1 and box_2 respectively. The last thing we need to add to our html is a link to our css file and our JavaScript. So in our head we will create a link tag with a rel[^7] attribute and a href[^8] attribute, and a script tag with a src tag.
 
 ```html
 <head>
@@ -63,7 +65,7 @@ Alright, now we have our html linked to our css file! Now we can hop over to our
 
 ### CSS
 
-Déjà vu, its empty, lets change that. Lets first just color our boxes, that sounds nice and fun. Wait, how do you tell it what to color? Well in css we use selectors[^8] to select the thing, or element, from the html to stylize. So using one of the simple selectors we can select our divs using *"div{}"* but, that selects both. That why we assigned an id attribute to each div. To select using id we would use the pound(#) sign before the id name, so lets color.
+Déjà vu, its empty, lets change that. Lets first just color our boxes, that sounds nice and fun. Wait, how do you tell it what to color? Well in css we use selectors[^9] to select the thing, or element, from the html to stylize. So using one of the simple selectors we can select our divs using *"div{}"* but, that selects both. That why we assigned an id attribute to each div. To select using id we would use the pound(#) sign before the id name, so lets color.
 
 ```css
 #box_1{
@@ -75,7 +77,7 @@ Déjà vu, its empty, lets change that. Lets first just color our boxes, that so
 }
 ```
 
-Cool, we got our two boxes colored using the *"background-color"* rule[^9], but they look a little short. Using another rule we'll fix that using the *"padding"* rule to add space between the text and the box boundaries.
+Cool, we got our two boxes colored using the *"background-color"* rule[^10], but they look a little short. Using another rule we'll fix that using the *"padding"* rule to add space between the text and the box boundaries.
 
 ```css
 #box_1{
@@ -210,12 +212,13 @@ Alright, we have built a working navbar, albeit very minimal. There is plenty of
 <hr>
 ### Footnotes
 
-[^1]: html
-[^2]: css
-[^3]: tags
-[^4]: div
-[^5]: attributes
-[^6]: rel_attr
-[^7]: href_attr
-[^8]: css_selectors
-[^9]: css_rules
+[^1]: Html stands for Hypertext Markup Language, and is the standard markup language for creating web pages and applications.
+[^2]: Stands for Cascading Style Sheet, and is used for visually styling a web page.
+[^3]: JavaScript is a scripting language used to make a web page act dynamically.
+[^4]: Tags are a identifier in HTML that define how the content will act or be rendered, not to be confused with elements, which are rendered from tags.
+[^5]: Div is a HTML tag whose job is grouping a collection of elements together.
+[^6]: An attribute is a modifier of an HTML element used to modify the default functionality
+[^7]: The required rel attribute specifies the relationship between the current document and the linked document/resource.
+[^8]: The href attribute specifies the location of a linked document.
+[^9]: Css selectors are patterns used to identify elements you want to style.
+[^10]: Css rules consist of a declaration and a selector. Rules are used to change the styling of the element.
