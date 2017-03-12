@@ -2,7 +2,7 @@
 title: "How to Create a Dynamic Navigation Bar"
 ---
 
-<img src="http://media4.s-nbcnews.com/j/newscms/2016_36/1685951/ss-160826-twip-05_8cf6d4cb83758449fd400c7c3d71aa1f.nbcnews-ux-2880-1000.jpg">
+<img src="/assets/images/hamburger.png">
 If you've spent time on the Internet then chances are you've seen somewhere a site with a drop down menu or navigation menu. They are handy little things that allow more space on the page for content, this is especially useful for mobile views where you have less space to fit content. So, let's delve into and start typing one up.
 
 
@@ -135,7 +135,7 @@ Now if you reload the page you won't see our second box! It's still there it's j
 
 ### JavaScript
 
-Open up our .js file like a child on Christmas morning, except it's not a present, just an empty file. In our script we need to accomplish a few things, first when we click the header show the other box and secondly if we click again hide it. To do this we will use the DOM and event listeners to do things when we click on the header.
+Open up our .js file, like a child opening a present on Christmas morning, except it's not a present, just an empty file. In our script we need to accomplish a few things, first when we click the header show the other box and secondly if we click again hide it. To do this we will use the DOM and event listeners to do things when we click on the header.
 
 Let's start by defining our header and nav elements in our script, actually before we can do that we need to tell the computer to wait for the page to load or else we'll get an error. How? you ask, simple we add a load event listener to the window and once it loads we start execution. Follow along.
 
