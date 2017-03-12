@@ -8,21 +8,17 @@
 	}
 /**/
 
-
 /* Universal css stylings */
 
 body{
 	font-family: 'Open Sans Condensed', sans-serif;
-}
-header{
-	
-	
-	
-	
+	margin: 0px;
+	padding: 0px;
 }
 header > a > h1 {
     font-family: 'Bahiana', cursive;
-    font-size: 35px;
+    font-size: 30px;
+    display: inline-block;
     letter-spacing: 3px;
     margin: 0px;
     color: black;
@@ -31,6 +27,7 @@ header > a{
 	text-decoration: none;
 }
 header h2{
+	cursor: default;
 	color: #949494;
 	font-size: 14px;
 	letter-spacing: 1px;
@@ -53,14 +50,15 @@ p, li, h4{
 li{
 	padding-top: 3px;
 }
-/*ul, ol{
-	padding: 0px 25px;
-}*/
 ul{
 	list-style-type: square; 
 }
-.header{
-	margin: -8px -8px 0px -8px;
+.container{
+	margin: 30px auto;
+	padding: 0px 12px;
+}
+.header_links{
+	cursor: default;
 }
 .header_links > div > a{
 	text-decoration: none;
@@ -81,8 +79,7 @@ ul{
 }
 .home_image{
 	height: 240px;
-	margin: auto -8px;
-	background-image: url("https://secure.static.tumblr.com/3d03199a1bf6d4f39edbb611e93ecee3/1k9ufwi/1bLn8zplk/tumblr_static_tumblr_static__640.jpg");
+	background-image: url("images/wheat.jpg");
 	background-size: 100% auto;
 	background-position: center;
 }
@@ -108,26 +105,13 @@ ul{
 	margin: auto -8px;
 	padding: 14px;
 }
-
-/* Action selectors */
-
-.external .fa-twitter:hover{
-	background-color: #41b8f3;
-}
-.external .fa-github:hover{
-	color: #000000;
-}
-.external .fa-rss:hover{
-	background-color: #ff9d0b;
-}
-.internal > a:hover{
-	color: #4bc69f;
-}
-.article_preview:hover > h3 > a{
-	color: #4bc69f;
-}
 .article_body > p > img{
 	width: 100%;
+	padding: 20px 0px;
+}
+.article_body > h3{
+	padding-top: 50px;
+	font-size: 25px; 
 }
 .article_share{ 
 	background-color: #f4f4f4;
@@ -148,14 +132,34 @@ ul{
 	border-radius: 100%;
 	background-color: lightcyan;
 }
+.article_preview{
+	padding-top: 24px; 
+}
 .article_preview img{
 	width: 225px;
 	float: left;
     border: 2px solid;
     padding: 8px;
-    margin: 0px 10px 25px 10px;
+    margin: 5px 10px;
 }
 
+/* Action selectors */
+
+.external .fa-twitter:hover{
+	background-color: #41b8f3;
+}
+.external .fa-github:hover{
+	color: #000000;
+}
+.external .fa-rss:hover{
+	background-color: #ff9d0b;
+}
+.internal > a:hover{
+	color: #f19c33;
+}
+.article_preview:hover > h3 > a{
+	color: #f19c33;
+}
 
 /* Gist syntax coloring */
 
@@ -163,6 +167,8 @@ ul{
 .gist .pl-s, .pl-pds{color:#ccbb87 !important;}
 .gist .pl-en{color:#00bcd4 !important;}
 .gist-meta{display:none;}
+
+/* markdown syntax coloring */
 
 .cp, .nt, .m, .mi, .k { color: red; }
 .na, .nf{ color: #00c256; }
@@ -178,7 +184,6 @@ ul{
 	border-radius: 6px;
 	margin: 40px auto;
 }
-
 
 /* When viewed on a screen less than 570px */
 
@@ -207,25 +212,18 @@ ul{
 	    transition: top 1s;
 	}
 	.home_image{
-		background-size: 100% 100%;
+		background-position: center;
+		background-size: 569px;
 	}
 	.fa-bars{
 		float: right;
 		margin: 14px 10px;
-		
 		font-size: 27px;
 		-webkit-transform: scale(1.3,1.1);
 	}
 	.fa-bars:hover  {
 		color: white;
 	}
-
-
-	
-	
-	
-
-	
 }
 
 
@@ -235,23 +233,28 @@ ul{
 
 @media (min-width: 570px) {
 	article{
+		width: 650px;
+		margin: auto;
 		display: flex;
 		align-items: center;
+		padding: 10px 18px;
+		background-color: #f1efef;
 	}
 	.header{
 		background-color: #f1efef;
-	    padding: 10px 18px;
+	    
 	}
 	header{
 		width: 33.3%;
 	}
 	.container{
-		width: 60.6%;
-		margin: auto;
+		width: 650px;
+	}
+	.home_image{
+		min-width: 650px;
 	}
 	h4{
 		letter-spacing: 4px;
-		margin-top: 55px;
 		text-align: center;
 	}
 	.header_links{
@@ -270,39 +273,3 @@ ul{
 		display: none;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
