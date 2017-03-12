@@ -14,13 +14,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Spencer Gerdes
-blurb: Guy @ ¯\_(ツ)_/¯
+blurb: Web Developer
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-repository: github-username/github-username.github.com
+  Exploring, learning, and doing all things programming.
+repository: Lwyrup/Lwyrup.github.com
 
 # Build settings - DO NOT EDIT, UNLESS YOU KNOW WHAT YOU'RE DOING.
 markdown: kramdown
