@@ -5,6 +5,7 @@ window.addEventListener("load",function(){
 	
 	status = 0;
 
+	hamburger.addEventListener("click", prevent)
 	hamburger.addEventListener("click",shownav);
 
 	function shownav(){
@@ -14,8 +15,12 @@ window.addEventListener("load",function(){
 			status = 1;
 		}
 		else{
-			navbar.style.top = "0px";
+			navbar.style.top = "-10px";
 			status = 0;
 		};
+	};
+
+	function prevent(){
+		event.preventDefault();
 	};
 });
