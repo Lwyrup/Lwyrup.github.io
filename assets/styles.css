@@ -19,7 +19,6 @@ header > a > h1 {
     font-family: 'Bahiana', cursive;
     font-size: 30px;
     display: inline-block;
-    letter-spacing: 3px;
     margin: 0px;
     color: black;
 }
@@ -115,13 +114,16 @@ ul{
 }
 .article_share{ 
 	background-color: #f4f4f4;
-	display: flex;
 	border-radius: 4px;
 	margin: 32px auto;
+	padding: 32px;
+}
+.article_share > p{
+	margin: 0px;
 }
 .article_share > .fa-twitter{
-	margin: auto 12px;
-    padding: 26px 6px;
+	margin-right: 12px;
+	float: left;
    	font-size: 26px;
    	color: #03a9f4;
 }
@@ -187,7 +189,10 @@ ul{
 
 /* When viewed on a screen less than 570px */
 
-@media (max-width: 569px){
+@media screen and (max-width: 569px){
+	
+
+
 	header{
 		position: relative;
 		z-index: 2;
@@ -195,11 +200,12 @@ ul{
 		background-color: #404040;
 	}
 	h1{
+		letter-spacing: 0px !important;
 		color: white !important;
 	}
 	.header_links{
 		position: absolute;
-		top: 0px;
+		top: -10px;
 		width: 100%;
 		z-index: 1;
 		background-color: #f1efef;
@@ -209,9 +215,10 @@ ul{
 	    align-items: baseline;
 	    padding: 23px 4px;
 	    clear: both;
-	    transition: top 1s;
+	    transition: top 0.5s;
 	}
 	.home_image{
+		height: 180px;
 		background-position: center;
 		background-size: 569px;
 	}
@@ -221,8 +228,21 @@ ul{
 		font-size: 27px;
 		-webkit-transform: scale(1.3,1.1);
 	}
-	.fa-bars:hover  {
+	.fa-bars:hover{
 		color: white;
+	}
+	.internal{
+		float: right;
+	}
+	.external{
+		float: left;
+	}
+	.article_preview img{
+		width: 170px;
+	    padding: 4px;
+	}
+	.article_share > p{
+		text-align: center;
 	}
 }
 
@@ -231,7 +251,7 @@ ul{
 
 /* When viewed on a screen greater than 569px wide */
 
-@media (min-width: 570px) {
+@media screen and (min-width: 570px) {
 	article{
 		width: 650px;
 		margin: auto;
@@ -239,6 +259,9 @@ ul{
 		align-items: center;
 		padding: 10px 18px;
 		background-color: #f1efef;
+	}
+	h1{
+	    letter-spacing: 3px;
 	}
 	.header{
 		background-color: #f1efef;
