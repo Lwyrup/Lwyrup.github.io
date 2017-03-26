@@ -1,0 +1,268 @@
+---
+title: Using CSS to create 3d objects
+---
+
+CSS, the language of style, master of illusion. It's pretty of course, hence the styling part of its name, but its all just paint at the end of the day right? Well CSS is capable of more such as animations and creating 3d objects. I'm not saying CSS is optimized for these task but in the content of web-pages it does a great job. So, let me teach you how to create a 3d box only use HTML, CSS, and a dab of JavaScript.
+
+<span>Note:</span> If creating 3D graphics and animating in the web browser interests you I'd suggest you check out the JavaScript library [three.js](https://threejs.org/).
+{:.callout}
+
+Make a new folder named '3d-box' and cd into the folder. Here we'll create our basic file structure of index.html, styles.css, and scripts.js. Now lets open up our HTML file and create the necessary elements.
+
+### HTML
+
+First off we'll create the basic empty HTML page.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+</body>
+</html>
+```
+
+Perfect, now lets get our head filled with the title, links to our other files, and some text in the body.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>3D Box</title>
+	<link rel="stylesheet" href="styles.css">
+	<script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+	<h1>Behold 3D in 2D</h1>
+</body>
+
+</html>
+```
+
+Everything but the box is built now, to build the box we need a stage, a box, and the faces that make up the box.
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>3D Box</title>
+	<link rel="stylesheet" href="styles.css">
+	<script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+	<h1>Behold 3D in 2D</h1>
+
+	<div class="stage">
+		<div class="box">
+			<figure id="front">Front</figure>
+			<figure id="right">Right</figure>
+			<figure id="back">Back</figure>
+			<figure id="left">Left</figure>
+			<figure id="top">Top</figure>
+			<figure id="bottom">Bottom</figure>
+		</div>
+	</div>
+</body>
+
+</html>
+```
+
+Our HTML is now done but, if you open it up in your web browser it doesn't look very boxy at all huh? Don't worry because CSS is the Chris Angel of web development. With a flick of the wrist and an 'abrakadabra-alakazam' watch as master magician CSS transforms six divs into a three dimensional box! 
+
+Theatrics aside, lets do some magic in CSS.
+
+### CSS
+
+First thing I do is include the box model fix, this changes the border, padding, etc... so you don't have to constantly adjust the width to compensate. Now, to begin our trick we, as well as any other magician, will need to set the stage to perform on.
+
+```css
+/* box model fix */
+	html {
+	  box-sizing: border-box;
+	}
+	*, *:before, *:after {
+	  box-sizing: inherit;
+	}
+/* */
+.stage{
+	border: 2px solid black;
+	width: 800px;
+	height: 500px;
+	margin: auto;
+}
+```
+
+Stage, check. One more thing we need is colorful props. I mean just look at our six divs, bland, colorless, and disgusting!
+
+```css
+.box #front{
+	background-color: rgba(255, 255,   0, 0.5);
+}
+.box #right{
+	background-color: rgba(  0, 128,   0, 0.5);
+}
+.box #back{
+	background-color: rgba(255,   0,   0, 0.5);
+}
+.box #left{
+	background-color: rgba(  0,   0, 255, 0.5);
+}
+.box #top{
+	background-color: rgba(255, 192, 203, 0.5);
+}
+.box #bottom{
+	background-color: rgba(128,   0, 128, 0.5);
+}
+```
+
+Look all the colors of the rainbow, and we can easily see margin and padding on the elements. Next we shall define our box's dimensions as 200px by 200px and take center stage.
+
+```css
+.stage{
+	border: 2px solid black;
+	width: 800px;
+	height: 500px;
+	margin: auto;
+	padding: 150px 300px;
+}
+.box{
+	width: 200px;
+	height: 200px;
+}
+```
+
+We now will stack our faces into a neat pile and make our text more aesthetic.
+
+```css
+.box figure{
+	margin: 0px;
+	height: 200px;
+	width: 200px;
+	position: absolute;
+	color: white;
+	line-height: 200px;
+	font-size: 40px;
+	text-align: center;
+}
+```
+
+We strip of the margin that comes as default on figure elements, define each face to be 200 by 200 pixels, and stylized our text. Lastly we'll need our magical properites on our box and stage.
+
+```css
+.stage{
+	border: 2px solid black;
+	width: 800px;
+	height: 500px;
+	margin: auto;
+	padding: 150px 300px;
+	perspective: 1000px;
+}
+.box{
+	width: 200px;
+	height: 200px;
+	transform-style: preserve-3d;
+}
+```
+
+The perspective property defines how far a 3D element is from the view and is 1000px in our case. Transform-style described how nested elements are rendered in the content of 3D. Transform-style by default is set to flat and perspective is by default none.
+{.:callout}
+
+ Now is when the dramatic music picks out and we begin gesticulating our wand. We start by rotating the faces so they face where we want them to go, for example; the right face facing right. We do this using the transform rule.
+
+```css
+.box #front{
+	background-color: rgba(255, 255,   0, 0.5);
+	transform: rotateY(   0deg );
+}
+.box #right{
+	background-color: rgba(  0, 128,   0, 0.5);
+	transform: rotateY( 90deg );
+}
+.box #back{
+	background-color: rgba(255,   0,   0, 0.5);
+	transform: rotateY( 180deg );
+}
+.box #left{
+	background-color: rgba(  0,   0, 255, 0.5);
+	transform: rotateY( -90deg );
+}
+.box #top{
+	background-color: rgba(255, 192, 203, 0.5);
+	transform: rotateX(  90deg );
+}
+.box #bottom{
+	background-color: rgba(128,   0, 128, 0.5);
+	transform: rotateX(  -90deg );
+}
+```
+
+Lastly we need to explode the box with another transform property. This explosion is done using translateZ and is easy since we have all our faces Z axis facing the inner cube origin.
+
+```css
+.box #front{
+	background-color: rgba(255, 255,   0, 0.5);
+	transform: rotateY(   0deg ) translateZ( 100px );
+}
+.box #right{
+	background-color: rgba(  0, 128,   0, 0.5);
+	transform: rotateY( 90deg ) translateZ( 100px );
+}
+.box #back{
+	background-color: rgba(255,   0,   0, 0.5);
+	transform: rotateY( 180deg ) translateZ( 100px );
+}
+.box #left{
+	background-color: rgba(  0,   0, 255, 0.5);
+	transform: rotateY( -90deg ) translateZ( 100px );
+}
+.box #top{
+	background-color: rgba(255, 192, 203, 0.5);
+	transform: rotateX(  90deg ) translateZ( 100px );
+}
+.box #bottom{
+	background-color: rgba(128,   0, 128, 0.5);
+	transform: rotateX(  -90deg ) translateZ( 100px );
+}
+```
+
+Now we have a 3D cube, but how can we know? We can't look around the cube to check if it is 3D, yet. Lets allow the audience to see using JavaScript.
+
+Open up your scripts.js and we'll begin with the window wait and defining variables.
+
+```javascript
+window.addEventListener("load", function(){
+
+	var stage = document.getElementsByClassName('stage')[0];
+	var box = document.getElementsByClassName('box')[0];
+
+});
+```
+
+Now our box and stage are defined. We want to add a way to move the box and we'll use a event listener to do this. So, when the user mouses over the stage it will allow them rotate the cube, based on the mouse's position.
+
+```javascript
+window.addEventListener("load", function(){
+
+	var stage = document.getElementsByClassName('stage')[0];
+	var box = document.getElementsByClassName('box')[0];
+	stage.addEventListener("mousemove", rotateCube);
+
+	function rotateCube(e){
+		var x = e.pageX - this.offsetLeft + 1 - 400;
+		var y = e.pageY - this.offsetTop + 1 - 250;
+		var totalRotation = "rotateY("+x+"deg) rotateX("+y+"deg)";
+		box.style.transform = totalRotation;
+	}
+});
+```
+
+We save the mouses position on the stage with the coords (0px,0px) being the middle of the stage. We then build our CSS string for rotations. Now we declare that the box has those values for the transform style. In the browser now you can see the box as it moves in all of its 3D glory!
+
+Pretty neat, right? Well thats all I have for this tutorial if you want some ideas checkout my repo for the 3D box [here](https://github.com/Lwyrup/Tests-Proof-of-concepts/tree/master/3d-cubes-web). I used object oriented JS and included different modes for the box, feel free to build these and I encourage you to build whatever comes to mind.
