@@ -1,4 +1,3 @@
-
 /* Box model fix*/
 	html {
 		box-sizing: border-box;
@@ -10,46 +9,46 @@
 
 /* Universal css stylings */
 
-body{
+.body{
 	font-family: 'Open Sans Condensed', sans-serif;
 	margin: 0px;
 	padding: 0px;
 }
-header > a > h1 {
+.header__title{
     font-family: 'Bahiana', cursive;
     font-size: 30px;
     display: inline-block;
     margin: 0px;
     color: black;
 }
-header > a{
+.header > a{
 	text-decoration: none;
 }
-header h2{
+.header h2{
 	cursor: default;
 	color: #949494;
 	font-size: 14px;
 	letter-spacing: 1px;
 	margin: 0px;
 }
-h3{
+.body h3{
 	letter-spacing: 2px;
 }
-hr{
+.body hr{
 	border-color: rgba(2, 2, 2, 0.14);
 	clear: both;
 }
-a{
+.body a{
 	color: #757575;
 }
-p, li, h4{
+.body p, .body li, .body h4{
     letter-spacing: 0.03em;
     word-spacing: 0.1em;
 }
-li{
+.body li{
 	padding-top: 3px;
 }
-ul{
+.body ul{
 	list-style-type: square; 
 }
 .container{
@@ -163,13 +162,6 @@ ul{
 	color: #f19c33;
 }
 
-/* Gist syntax coloring */
-
-.gist .pl-k{color:#de1e08; font-weight: bold;}
-.gist .pl-s, .pl-pds{color:#ccbb87 !important;}
-.gist .pl-en{color:#00bcd4 !important;}
-.gist-meta{display:none;}
-
 /* markdown syntax coloring */
 
 .cp, .nt, .m, .mi, .k { color: red; }
@@ -193,13 +185,13 @@ ul{
 	
 
 
-	header{
+	.body header{
 		position: relative;
 		z-index: 2;
 		padding: 15px;
 		background-color: #404040;
 	}
-	h1{
+	.body h1{
 		letter-spacing: 0px !important;
 		color: white !important;
 	}
@@ -252,7 +244,7 @@ ul{
 /* When viewed on a screen greater than 569px wide */
 
 @media screen and (min-width: 570px) {
-	article{
+	.body article{
 		width: 650px;
 		margin: auto;
 		display: flex;
@@ -260,14 +252,14 @@ ul{
 		padding: 10px 18px;
 		background-color: #f1efef;
 	}
-	h1{
+	.body h1{
 	    letter-spacing: 3px;
 	}
 	.header{
 		background-color: #f1efef;
 	    
 	}
-	header{
+	.body header{
 		width: 33.3%;
 	}
 	.container{
@@ -276,7 +268,7 @@ ul{
 	.home_image{
 		min-width: 650px;
 	}
-	h4{
+	.body h4{
 		letter-spacing: 4px;
 		text-align: center;
 	}
