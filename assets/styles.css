@@ -343,9 +343,10 @@ table {
 }
 
 .outerContainer{
-	width: 900px;
+	width: 1000px;
 	margin: auto;
 }
+
 .outerContainer::after{
 	content: "";
 	clear: both;
@@ -371,7 +372,7 @@ table {
 .box, .opener__body{
 	padding: 30px;
 	font-size: 22px;
-	line-height: 28px;
+	line-height: 1.5;
 	font-family: 'Raleway', sans-serif;
 }
 
@@ -384,7 +385,6 @@ table {
 
 .opener__header{
 	font-family: 'Oswald', sans-serif;
-	
 }
 
 .opener{
