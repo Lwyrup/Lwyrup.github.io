@@ -4,6 +4,12 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -33,7 +39,6 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	background-color:#F3F8F2;
-	background-color: ;
 }
 ol, ul {
 	list-style: none;
@@ -70,7 +75,7 @@ table {
 
 .box{
 	margin: 40px 0px;
-	background: linear-gradient(#EBE9E9,#F3F8F2);
+	background: linear-gradient( rgba(235,233,233,1), rgba(235,233,233,0) );
 	border-top: 1px solid rgb(0,0,0)
 }
 
@@ -97,19 +102,14 @@ table {
 }
 
 .opener{
-	margin: 20px 10px 0px;
+	background: linear-gradient(#3581B8,#FCB07E,#FCB07E,#FCB07E);
 }
 
 .opener__header{
 	font-size: 50px;
 	text-align: center;
 	padding: 80px 0px;
-	background: linear-gradient(#3581B8,#FCB07E);
 	color: white;
-}
-
-.opener__body{	
-	background-color: #FCB07E;
 }
 
 .opener__body::after{
@@ -136,12 +136,17 @@ table {
 }
 
 nav{
-	background-color: #DEE2D6;
-	padding: 20px 5px;
+	background: linear-gradient(#F5F7F3,#DEE2D6,#C5CDB7);
+	padding: 20px 0px;
 	text-align: right;
 }
 
 nav a{
-	padding: 0px 5px;
+	font-family: 'Raleway', sans-serif;
+	margin: 0px 20px;
 	text-decoration: none;
+}
+
+nav a:hover{
+	color: #2F72A2;
 }
