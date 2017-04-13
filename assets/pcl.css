@@ -135,6 +135,10 @@ table {
 	border: 4px double #DEE2D6;
 }
 
+nav, .opener{
+	min-width: 1000px;
+}
+
 nav{
 	background: linear-gradient(#F5F7F3,#DEE2D6,#C5CDB7);
 	padding: 20px 0px;
