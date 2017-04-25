@@ -9,7 +9,7 @@
 
 /* Universal css stylings */
 
-.body{
+body{
 	font-family: 'Open Sans Condensed', sans-serif;
 	margin: 0px;
 	padding: 0px;
@@ -31,24 +31,24 @@
 	letter-spacing: 1px;
 	margin: 0px;
 }
-.body h3{
+body h3{
 	letter-spacing: 2px;
 }
-.body hr{
+body hr{
 	border-color: rgba(2, 2, 2, 0.14);
 	clear: both;
 }
-.body a{
+body a{
 	color: #757575;
 }
-.body p, .body li, .body h4{
+body p, body li, body h4{
     letter-spacing: 0.03em;
     word-spacing: 0.1em;
 }
-.body li{
+body li{
 	padding-top: 3px;
 }
-.body ul{
+body ul{
 	list-style-type: square; 
 }
 .container{
@@ -182,13 +182,13 @@
 /* When viewed on a screen less than 570px */
 
 @media screen and (max-width: 569px){
-	.body header{
+	body header{
 		position: relative;
 		z-index: 2;
 		padding: 15px;
 		background-color: #404040;
 	}
-	.body h1{
+	body h1{
 		letter-spacing: 0px !important;
 		color: white !important;
 	}
@@ -241,31 +241,31 @@
 /* When viewed on a screen greater than 569px wide */
 
 @media screen and (min-width: 570px) {
-	.body article{
-		width: 650px;
+	body article{
+		width: 1000px;
 		margin: auto;
 		display: flex;
 		align-items: center;
 		padding: 10px 18px;
 		background-color: #f1efef;
 	}
-	.body h1{
+	body h1{
 	    letter-spacing: 3px;
 	}
 	.header{
 		background-color: #f1efef;
 	    
 	}
-	.body header{
+	body header{
 		width: 33.3%;
 	}
 	.container{
-		width: 650px;
+		width: 1000px;
 	}
 	.home_image{
-		min-width: 650px;
+		min-width: 1000px;
 	}
-	.body h4{
+	body h4{
 		letter-spacing: 4px;
 		text-align: center;
 	}
