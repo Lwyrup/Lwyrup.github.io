@@ -1,17 +1,22 @@
 ---
 layout: default
 ---
+</div>
 
-<div class="home_image"></div>
-<div class="container sub_text">
+<div class="heroImage"></div>
+
+<div class="l-outerContainer">
 	<h4>Recent Articles</h4>
 
 	{% for post in site.posts %}
-	<div class="article_preview">
+	<div class="preview">
 		<hr>
-		<small>{{ post.date | date: "%b %-d, %Y" }}</small>
-		<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-		{{ post.excerpt }}
+		<small class="preview__date">{{ post.date | date: "%b %-d, %Y" }}</small>
+		<h3 class="preview__title">
+			<a href="{{ post.url }}">{{ post.title }}</a>
+		</h3>
+		<div class="preview__excerpt">
+			{{ post.excerpt }}	
+		</div>
 	</div>
 	{% endfor %}
-</div>
