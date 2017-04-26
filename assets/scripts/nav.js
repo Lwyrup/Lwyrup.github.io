@@ -1,7 +1,7 @@
 window.addEventListener("load",function(){
 
-	hamburger = document.getElementsByClassName("fa fa-bars")[0];
-	navbar = document.getElementsByClassName("header_links")[0];
+	hamburger = document.getElementsByClassName("headerInfo__hamburger")[0];
+	navbar = document.getElementsByClassName("dropNav")[0];
 	
 	status = 0;
 
@@ -9,7 +9,7 @@ window.addEventListener("load",function(){
 	hamburger.addEventListener("click",shownav);
 
 	function shownav(){
-		distance = document.getElementsByClassName("header")[0].clientHeight;
+		distance = document.getElementsByClassName("headerBg")[0].clientHeight;
 		if (status == 0){
 			navbar.style.top = distance + "px";
 			status = 1;
