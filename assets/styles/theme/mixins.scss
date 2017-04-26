@@ -1,0 +1,27 @@
+@mixin mobileDisplay( $display:true ){
+	@media (max-width: 700px){
+		display: $display;
+	}
+}
+
+@mixin desktopDisplay( $display:true ){
+	@media (min-width: 700px){
+		display: $display;
+	}
+}
+
+@mixin linear-gradient( $color1, $color2, $color3:false ){
+	background: $color1; /* For browsers that do not support gradients */
+	@if $color3 {
+		background: -webkit-linear-gradient( $color1, $color2, $color3 ); /* For Safari 5.1 to 6.0 */
+		background:	   -moz-linear-gradient( $color1, $color2, $color3 ); /* For Firefox 3.6 to 15 */
+		background:		 -o-linear-gradient( $color1, $color2, $color3 ); /* For Opera 11.1 to 12.0 */
+		background:    	    linear-gradient( $color1, $color2, $color3 ); /* Standard syntax */
+	}
+	@else{
+		background: -webkit-linear-gradient( $color1, $color2 ); /* For Safari 5.1 to 6.0 */
+		background:	   -moz-linear-gradient( $color1, $color2 ); /* For Firefox 3.6 to 15 */
+		background:		 -o-linear-gradient( $color1, $color2 ); /* For Opera 11.1 to 12.0 */
+		background:    	    linear-gradient( $color1, $color2 ); /* Standard syntax */
+	}
+}

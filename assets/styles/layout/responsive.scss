@@ -1,0 +1,7 @@
+.l-desktop{
+	@include mobileDisplay( none );
+}
+
+.l-mobile{
+	@include desktopDisplay( none);
+}

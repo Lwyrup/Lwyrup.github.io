@@ -1,0 +1,84 @@
+// TODO: Make each external link scale up and widen when hovered
+.headerBg{
+	@include linear-gradient( $orange, $light-orange, $orange );
+	position: relative;
+	z-index: 9999;
+}
+
+.header{
+	position: relative;
+	padding: 24px 0px;
+}
+
+.headerInfo__title,
+.headerInfo__blurb,
+.articlesLink,
+.aboutLink{
+	font-family: $font_sec;
+	color: $black;
+}
+
+.headerInfo__title{
+	font-size: 46px;
+}
+
+.headerInfo__blurb{
+	font-size: 23px;
+	text-align: center;
+    letter-spacing: 4px;
+}
+
+.headerLinksExternal .fa.fa-github.fa-lg{
+	font-size: 40px;
+	color: $black;
+}
+
+.headerLinksExternal .fa.fa-twitter,
+.headerLinksExternal .fa.fa-linkedin{
+	background-color: $black;
+	color: $light-orange;
+	font-size: 28px;
+	padding: 3px;
+	margin: 0px 30px;
+	width: 34px;
+	height: 34px;
+	border-radius: 100%;
+}
+
+.headerLinksInternal,
+.headerInfo__blurb{
+	cursor: default;
+}
+
+.headerLinksInternal{
+	font-size: 26px;
+}
+
+.aboutLink{
+	margin-left: 10px;
+}
+
+.dropNav{
+	@include linear-gradient( $gray, $light-gray, $gray );
+    padding: 18px 24px 18px 0px;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: -10px;
+    z-index: 9998;
+    transition: top 400ms;
+}
+
+.headerInfo__hamburger{
+	position: absolute;
+	right: 0px;
+	font-size: 66px;
+	color: $black;
+}
+
+@media (max-width: 700px){
+	.headerLinksExternal .fa.fa-twitter,
+	.headerLinksExternal .fa.fa-linkedin{
+		color: $gray;
+	}
+}
