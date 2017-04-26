@@ -1,20 +1,61 @@
-<div class="header">
-  <article>
-    <header>
-      <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
-      <a href="/"><h1 class="header__title">{{ site.title }}</h1></a>
-      <h2>{{ site.blurb }}</h2>
-    </header>
-    <div class="header_links">
-      <div class="external">
-        <a href="https://twitter.com/Ex_Spenceiv"><i class="fa fa-twitter" aria-hidden="false"></i></a>
-        <a href="https://github.com/Lwyrup"><i class="fa fa-github fa-lg" aria-hidden="false"></i></a>
-        <a href= "{{ "/feed.xml" }}" ><i class="fa fa-rss" aria-hidden="false"></i></a>
+<article class="headerBg">
+  <div class="headerBg l-outerContainer">
+
+    <div class="header l-header">
+      <header class="headerInfo">
+        <a href="#">
+          <i class="headerInfo__hamburger l-mobile fa fa-bars" aria-hidden="true"></i>
+        </a>
+        <a href="/">
+          <h1 class="headerInfo__title">{{ site.title }}</h1>
+        </a>
+        <h2 class="headerInfo__blurb">{{ site.blurb }}</h2>
+      </header>
+
+      <div class="headerLinksExternal l-headerLinksExternal l-desktop">
+        <a class="headerLink l-fullCenter" 
+          href="https://twitter.com/Ex_Spenceiv">
+          <i class="fa fa-twitter l-fullCenter" aria-hidden="false"></i>
+        </a>
+        <a class="headerLink l-fullCenter" 
+          href="https://github.com/Lwyrup">
+          <i class="fa fa-github fa-lg" aria-hidden="false"></i>
+        </a>
+        <a class="headerLink l-fullCenter" 
+          href= "https://www.linkedin.com/in/spencergerdes/">
+          <i class="fa fa-linkedin l-fullCenter" aria-hidden="false"></i>
+        </a>
       </div>
-      <div class="internal">
-        <a href="/articles/index.html">Articles</a>
-        <a href="/about/index.html">About</a>
+
+      <div class="headerLinksInternal l-desktop">
+        <a class="articlesLink" href="/articles/index.html">Articles</a>
+        <a class="aboutLink" href="/about/index.html">About</a>
       </div>
     </div>
-  </article>
+  </div>
+
+
+
+</article>
+
+<div class="dropNav l-header l-mobile">
+  <div class="headerLinksExternal l-headerLinksExternal">
+    <a class="headerLink l-fullCenter" 
+      href="https://twitter.com/Ex_Spenceiv">
+      <i class="fa fa-twitter l-fullCenter" aria-hidden="false"></i>
+    </a>
+    <a class="headerLink l-fullCenter" 
+      href="https://github.com/Lwyrup">
+      <i class="fa fa-github fa-lg" aria-hidden="false"></i>
+    </a>
+    <a class="headerLink l-fullCenter" 
+      href= "https://www.linkedin.com/in/spencergerdes/">
+      <i class="fa fa-linkedin l-fullCenter" aria-hidden="false"></i>
+    </a>
+  </div>
+
+  <div class="headerLinksInternal">
+    <a class="articlesLink" href="/articles/index.html">Articles</a>
+    <a class="aboutLink" href="/about/index.html">About</a>
+  </div>
 </div>
