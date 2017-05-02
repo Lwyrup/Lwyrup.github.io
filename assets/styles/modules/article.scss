@@ -1,0 +1,42 @@
+.article__title{
+	font-size: 46px;
+	font-weight: bold;
+}
+
+.article__date{
+	color: $dark-gray;
+	font-size: 20px;
+}
+
+.article__body{
+	font-size: 24px;
+	line-height: 1.5;
+}
+
+.article__body h3{
+	font-size: 34px;
+	font-weight: bold;
+	margin-top: 100px;
+}
+
+.article__body hr{
+	margin: 118px 0px;
+}
+
+.highlighter-rouge{
+	background-color: blue;
+}
+
+.article__title,
+.article__date,
+.article__body,
+.article__body img,
+.article__body p{
+	margin: 30px 0px;
+}
+
+.article__title,
+.article__date,
+.article__body{
+	font-family: $font-pri;
+}

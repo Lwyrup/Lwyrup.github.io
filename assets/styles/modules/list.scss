@@ -1,0 +1,31 @@
+.articleArchive{
+	margin: 40px 0px;
+}
+
+.listTitle{
+	font-size: 30px;
+	font-weight: bolder;
+    letter-spacing: 3px;
+    margin: 16px 0px;
+}
+
+.list{
+	font-size: 25px;
+    line-height: 1.5;
+    list-style: circle;
+    padding-left: 40px;
+}
+
+.listTitle,
+.list{
+	font-family: $font-pri;
+}
+
+.list__link{
+	text-decoration: underline;
+	color: $dark-gray;
+}
+
+.list__link:hover{
+	color: $orange;
+}

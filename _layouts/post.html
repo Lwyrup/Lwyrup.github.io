@@ -1,21 +1,22 @@
 ---
 layout: default
 ---
-<div class="article container">
-	<div class="article_head">
-		<h2>{{ page.title }}</h2>
+<div class="pageBody">
 
-		<p class="sub_text">{{ page.date | date: "%b %-d, %Y" }}</p class="sub_text">
+	<div class="article">
+
+		<h2 class="article__title">{{ page.title }}</h2>
+		<p class="article__date">{{ page.date | date: "%b %-d, %Y" }}</p>
+
+		<div class="article__body">
+			{{ content }}
+		</div>
+
+		<div class="article__share">
+			<i class="fa fa-twitter" aria-hidden="true"></i>
+			<p>If you liked this article and think others should read it, please 
+			<a target="_blank" href="http://twitter.com/share?url={{ page.url | absolute_url }}">share it on Twitter</a>.</p>
+		</div>
 	</div>
-
-	<div class="article_body">
-		{{ content }}
-	</div>
-
-<div class="article_share">
-	<i class="fa fa-twitter" aria-hidden="true"></i>
-	<p>If you liked this article and think others should read it, please 
-	<a target="_blank" href="http://twitter.com/share?url={{ page.url | absolute_url }}">share it on Twitter</a>.</p>
-</div>
 
 </div>

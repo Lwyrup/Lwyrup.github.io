@@ -3,8 +3,6 @@
 }
 
 .preview__date{
-	color: $dark-gray;
-	font-family: $font-pri;
 	letter-spacing: 2px;
     font-size: 18px;
     display: block;
@@ -14,20 +12,40 @@
 	display: inline-block;
 	color: $black;
 	font-size: 40px;
-	font-family: $font-pri;
 	font-weight: bolder;
 	padding: 26px 0px;
 }
 
+.previewLink:hover{
+	color: $orange;
+}
+
 .preview__excerpt{
-	font-family: $font-pri;
 	font-size: 22px;
     line-height: 1.4;
-    color: $dark-gray;
+}
+
+.preview__date,
+.preview__excerpt,
+.previewLink{
+	font-family: $font-pri;
+}
+
+.preview__date,
+.preview__excerpt{
+	color: $dark-gray;
 }
 
 .preview__excerpt img{
 	width: 350px;
 	float: left;
 	margin: 10px 40px 10px 0px;
+}
+
+@media ( max-width: 700px ){
+	.preview__excerpt img{
+		width: 100%;
+		float: none;
+		margin: 12px 0px;
+	}
 }
