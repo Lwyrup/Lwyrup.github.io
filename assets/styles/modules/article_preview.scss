@@ -1,5 +1,5 @@
 .preview__divider{
-	margin: 60px 0px;
+	margin: 60px 10px;
 }
 
 .preview__date{
@@ -24,4 +24,10 @@
 	font-size: 22px;
     line-height: 1.4;
     color: $dark-gray;
+}
+
+.preview__excerpt img{
+	width: 350px;
+	float: left;
+	margin: 10px 40px 10px 0px;
 }

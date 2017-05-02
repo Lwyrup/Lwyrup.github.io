@@ -2382,6 +2382,11 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
+.clearFix::after {
+  content: "";
+  clear: both;
+  display: block; }
+
 .l-outerContainer {
   width: 1000px;
   margin: auto;
@@ -2525,7 +2530,7 @@ html {
   margin: 60px 0px; }
 
 .preview__divider {
-  margin: 60px 0px; }
+  margin: 60px 10px; }
 
 .preview__date {
   color: #A0A0A0;
@@ -2547,5 +2552,10 @@ html {
   font-size: 22px;
   line-height: 1.4;
   color: #A0A0A0; }
+
+.preview__excerpt img {
+  width: 350px;
+  float: left;
+  margin: 10px 40px 10px 0px; }
 
 /*# sourceMappingURL=style.css.map */
