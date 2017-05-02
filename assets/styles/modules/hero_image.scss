@@ -1,0 +1,17 @@
+.heroImage{
+	background-image: url("images/wheat.jpg");
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 400px;
+	width: 100%;
+	min-width: 1000px;
+}
+
+@media ( max-width: 700px ){
+	.heroImage{
+		background-size: auto;
+		min-width: 0px;
+	    height: 300px;
+	}
+}
