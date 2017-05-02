@@ -55,6 +55,9 @@ Here we see it defines a variable and assigns the value of Users.All(), here is 
 
 This is the basic flow of ASP .NET. The controller issues commands to the model, the model stores data and transforms data, and the view generates output of the model.
 
+<hr>
+### Footnotes
+
 [^1]: CIL stands for Common Intermediate Language, and means languages that use a compatible runtime environment.
 [^2]: CLR stands for Common Language Runtime, the virtual machine component of Microsoft's .NET framework that converts compiled code into machine instructions.
 [^3]: C# or C Sharp, is a object oriented language similar to Java.

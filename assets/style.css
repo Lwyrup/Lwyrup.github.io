@@ -2417,6 +2417,11 @@ html {
   .l-mobile {
     display: none; } }
 
+.l-article__share {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 .headerBg {
   background: #FFA500;
   /* For browsers that do not support gradients */
@@ -2503,7 +2508,17 @@ html {
 @media (max-width: 700px) {
   .headerLinksExternal .fa.fa-twitter,
   .headerLinksExternal .fa.fa-linkedin {
-    color: #DCDDDB; } }
+    color: #DCDDDB; }
+
+  .headerBg {
+    background: #1C181C; }
+
+  .headerInfo__hamburger {
+    color: #A0A0A0; }
+
+  .headerInfo__title,
+  .headerInfo__blurb {
+    color: #fff; } }
 .heroImage {
   background-image: url("images/wheat.jpg");
   background-size: 100%;
@@ -2565,11 +2580,33 @@ html {
   float: left;
   margin: 10px 40px 10px 0px; }
 
+.preview__excerpt a {
+  color: #1C181C; }
+
 @media (max-width: 700px) {
   .preview__excerpt img {
     width: 100%;
     float: none;
     margin: 12px 0px; } }
+.article__share {
+  background-color: #F7F7F7;
+  padding: 44px;
+  margin-top: 80px;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 24px; }
+
+.article__share a {
+  color: #A0A0A0;
+  text-decoration: underline; }
+
+.article__share a:hover {
+  color: #1DA1F2; }
+
+.article__share .fa.fa-twitter {
+  color: #1DA1F2;
+  font-size: 50px;
+  margin-right: 24px; }
+
 .articleArchive {
   margin: 40px 0px; }
 
@@ -2650,10 +2687,8 @@ html {
   font-family: "Open Sans Condensed", sans-serif; }
 
 .callout {
-  background-color: lightgreen;
-  padding: 30px;
-  border: 3px dotted green;
-  border-radius: 11px; }
+  background-color: #E8FFE2;
+  padding: 30px; }
 
 .callout span {
   font-style: italic; }
@@ -2691,5 +2726,18 @@ html {
 
 .c1 {
   color: darkgray; }
+
+.footnote {
+  position: relative;
+  bottom: 5px;
+  padding: 0px 3px;
+  font-size: 20px; }
+
+.footnotes ol {
+  list-style-type: decimal;
+  padding-left: 40px; }
+
+.reversefootnote {
+  color: #A0A0A0; }
 
 /*# sourceMappingURL=style.css.map */

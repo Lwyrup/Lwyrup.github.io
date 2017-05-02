@@ -1,0 +1,15 @@
+.footnote{
+	position: relative;
+    bottom: 5px;
+	padding: 0px 3px;
+	font-size: 20px;
+}
+
+.footnotes ol{
+	list-style-type: decimal;
+	padding-left: 40px;
+}
+
+.reversefootnote{
+	color: $dark-gray;
+}

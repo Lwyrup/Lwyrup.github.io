@@ -1,0 +1,22 @@
+.article__share{
+	background-color: $pencil-gray;
+	padding: 44px;
+	margin-top: 80px;
+	font-family: $font-pri;
+	font-size: 24px;
+}
+
+.article__share a{
+	color: $dark-gray;
+	text-decoration: underline;
+}
+
+.article__share a:hover{
+	color: $twitter-blue;
+}
+
+.article__share .fa.fa-twitter{
+	color: $twitter-blue;
+	font-size: 50px;
+	margin-right: 24px;
+}

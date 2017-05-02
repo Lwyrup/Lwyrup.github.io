@@ -81,4 +81,17 @@
 	.headerLinksExternal .fa.fa-linkedin{
 		color: $gray;
 	}
+
+	.headerBg{
+		background: $eerie-black;
+	}
+
+	.headerInfo__hamburger{
+		color: $dark-gray;
+	}
+
+	.headerInfo__title,
+	.headerInfo__blurb{
+		color: $white;
+	}
 }
