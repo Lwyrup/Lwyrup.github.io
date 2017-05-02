@@ -2606,8 +2606,7 @@ html {
   margin: 40px 0px; }
 
 .article__title {
-  font-size: 46px;
-  font-weight: bold; }
+  font-size: 46px; }
 
 .article__date {
   color: #A0A0A0;
@@ -2619,20 +2618,30 @@ html {
 
 .article__body h3 {
   font-size: 34px;
-  font-weight: bold;
   margin-top: 100px; }
+
+.article__title,
+.article__body h3,
+.article__body h4,
+.article__body h5 {
+  font-weight: bold; }
+
+.article__body h4 {
+  font-size: 30px; }
+
+.article__body h5 {
+  font-size: 28px; }
 
 .article__body hr {
   margin: 118px 0px; }
-
-.highlighter-rouge {
-  background-color: blue; }
 
 .article__title,
 .article__date,
 .article__body,
 .article__body img,
-.article__body p {
+.article__body p,
+.article__body h4,
+.article__body h5 {
   margin: 30px 0px; }
 
 .article__title,
@@ -2648,5 +2657,12 @@ html {
 
 .callout span {
   font-style: italic; }
+
+.highlighter-rouge {
+  background-color: lightblue;
+  padding: 18px;
+  border: 3px solid cadetblue;
+  border-radius: 8px;
+  overflow-y: scroll; }
 
 /*# sourceMappingURL=style.css.map */
