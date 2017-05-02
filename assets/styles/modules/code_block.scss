@@ -1,7 +1,39 @@
 .highlighter-rouge{
-	background-color: lightblue;
+	background-color: $pencil-gray;
     padding: 18px;
-    border: 3px solid cadetblue;
+    border: 1px solid $dark-gray;
     border-radius: 8px;
     overflow-y: scroll;
+    font-family: monospace;
+    font-size: 18px;
+    margin: 70px 0px;
+}
+
+.cp, 
+.nt, 
+.m, 
+.mi, 
+.k{
+	color: red;
+}
+
+.na,
+.nf{
+	color: #00c256;
+}
+
+.s,
+.s2{
+	color: #caca6b;
+}
+
+.nl,
+.no,
+.nb,
+.kd{
+	color: #23bbff;
+}
+
+.c1{
+	color: darkgray;
 }

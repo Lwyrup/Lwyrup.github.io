@@ -2659,10 +2659,37 @@ html {
   font-style: italic; }
 
 .highlighter-rouge {
-  background-color: lightblue;
+  background-color: #F7F7F7;
   padding: 18px;
-  border: 3px solid cadetblue;
+  border: 1px solid #A0A0A0;
   border-radius: 8px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  font-family: monospace;
+  font-size: 18px;
+  margin: 70px 0px; }
+
+.cp,
+.nt,
+.m,
+.mi,
+.k {
+  color: red; }
+
+.na,
+.nf {
+  color: #00c256; }
+
+.s,
+.s2 {
+  color: #caca6b; }
+
+.nl,
+.no,
+.nb,
+.kd {
+  color: #23bbff; }
+
+.c1 {
+  color: darkgray; }
 
 /*# sourceMappingURL=style.css.map */
