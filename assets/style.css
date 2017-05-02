@@ -2444,8 +2444,7 @@ html {
 .headerInfo__blurb,
 .articlesLink,
 .aboutLink {
-  font-family: "Bahiana", cursive;
-  color: #000; }
+  font-family: "Bahiana", cursive; }
 
 .headerInfo__title {
   font-size: 46px; }
@@ -2455,27 +2454,15 @@ html {
   text-align: center;
   letter-spacing: 4px; }
 
-.headerLinksExternal .fa.fa-github.fa-lg {
-  font-size: 40px;
-  color: #000; }
-
-.headerLinksExternal .fa.fa-twitter,
-.headerLinksExternal .fa.fa-linkedin {
-  background-color: #000;
-  color: #FFBC3F;
-  font-size: 28px;
-  padding: 3px;
-  margin: 0px 30px;
-  width: 34px;
-  height: 34px;
-  border-radius: 100%; }
-
 .headerLinksInternal,
 .headerInfo__blurb {
   cursor: default; }
 
 .headerLinksInternal {
   font-size: 26px; }
+
+.headerLinksInternal a:hover {
+  color: #fff; }
 
 .aboutLink {
   margin-left: 10px; }
@@ -2502,16 +2489,21 @@ html {
 .headerInfo__hamburger {
   position: absolute;
   right: 0px;
-  font-size: 66px;
+  font-size: 66px; }
+
+.headerInfo__hamburger,
+.headerInfo__title,
+.headerInfo__blurb,
+.articlesLink,
+.aboutLink {
   color: #000; }
 
 @media (max-width: 700px) {
-  .headerLinksExternal .fa.fa-twitter,
-  .headerLinksExternal .fa.fa-linkedin {
-    color: #DCDDDB; }
-
   .headerBg {
     background: #1C181C; }
+
+  .headerLinksInternal a:hover {
+    color: #FFBC3F; }
 
   .headerInfo__hamburger {
     color: #A0A0A0; }
@@ -2519,6 +2511,49 @@ html {
   .headerInfo__title,
   .headerInfo__blurb {
     color: #fff; } }
+.headerLinksExternal .fa.fa-twitter,
+.headerLinksExternal .fa.fa-linkedin,
+.headerLinksExternal .fa.fa-github.fa-lg {
+  border-radius: 100%; }
+
+.headerLinksExternal .fa.fa-github.fa-lg {
+  font-size: 40px; }
+
+.headerLinksExternal .fa.fa-twitter,
+.headerLinksExternal .fa.fa-linkedin {
+  background-color: #000;
+  color: #FFBC3F;
+  font-size: 28px;
+  padding: 3px;
+  margin: 0px 30px;
+  width: 34px;
+  height: 34px; }
+
+.headerLinksExternal .fa.fa-github.fa-lg {
+  color: #000; }
+
+.headerLinksExternal .fa {
+  transition: background-color 500ms, color 500ms, transform 500ms; }
+
+.headerLinksExternal .fa.fa-twitter:hover {
+  background-color: #1DA1F2;
+  color: white; }
+
+.headerLinksExternal .fa.fa-linkedin:hover {
+  background-color: #0077B5;
+  color: white; }
+
+.headerLinksExternal .fa.fa-github:hover {
+  color: #333;
+  background-color: #fff; }
+
+@media (max-width: 700px) {
+  .headerLinksExternal .fa.fa-twitter,
+  .headerLinksExternal .fa.fa-linkedin {
+    color: #DCDDDB; } }
+@media (min-width: 700px) {
+  .headerLinksExternal .fa:hover {
+    transform: scale(1.8, 1.8); } }
 .heroImage {
   background-image: url("images/wheat.jpg");
   background-size: 100%;

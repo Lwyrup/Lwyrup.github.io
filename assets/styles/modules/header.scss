@@ -1,4 +1,3 @@
-// TODO: Make each external link scale up and widen when hovered
 .headerBg{
 	@include linear-gradient( $orange, $light-orange, $orange );
 	position: relative;
@@ -15,7 +14,6 @@
 .articlesLink,
 .aboutLink{
 	font-family: $font_sec;
-	color: $black;
 }
 
 .headerInfo__title{
@@ -28,23 +26,6 @@
     letter-spacing: 4px;
 }
 
-.headerLinksExternal .fa.fa-github.fa-lg{
-	font-size: 40px;
-	color: $black;
-}
-
-.headerLinksExternal .fa.fa-twitter,
-.headerLinksExternal .fa.fa-linkedin{
-	background-color: $black;
-	color: $light-orange;
-	font-size: 28px;
-	padding: 3px;
-	margin: 0px 30px;
-	width: 34px;
-	height: 34px;
-	border-radius: 100%;
-}
-
 .headerLinksInternal,
 .headerInfo__blurb{
 	cursor: default;
@@ -52,6 +33,10 @@
 
 .headerLinksInternal{
 	font-size: 26px;
+}
+
+.headerLinksInternal a:hover{
+	color: $white;
 }
 
 .aboutLink{
@@ -73,17 +58,23 @@
 	position: absolute;
 	right: 0px;
 	font-size: 66px;
+}
+
+.headerInfo__hamburger,
+.headerInfo__title,
+.headerInfo__blurb,
+.articlesLink,
+.aboutLink{
 	color: $black;
 }
 
 @media (max-width: 700px){
-	.headerLinksExternal .fa.fa-twitter,
-	.headerLinksExternal .fa.fa-linkedin{
-		color: $gray;
-	}
-
 	.headerBg{
 		background: $eerie-black;
+	}
+
+	.headerLinksInternal a:hover{
+		color: $light-orange;
 	}
 
 	.headerInfo__hamburger{

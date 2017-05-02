@@ -1,0 +1,54 @@
+.headerLinksExternal .fa.fa-twitter,
+.headerLinksExternal .fa.fa-linkedin,
+.headerLinksExternal .fa.fa-github.fa-lg{
+	border-radius: 100%;
+}
+
+.headerLinksExternal .fa.fa-github.fa-lg{
+	font-size: 40px;
+}
+
+.headerLinksExternal .fa.fa-twitter,
+.headerLinksExternal .fa.fa-linkedin{
+	background-color: $black;
+	color: $light-orange;
+	font-size: 28px;
+	padding: 3px;
+	margin: 0px 30px;
+	width: 34px;
+	height: 34px;
+}
+
+.headerLinksExternal .fa.fa-github.fa-lg{
+	color: $black;
+}
+
+.headerLinksExternal .fa{
+	transition: background-color 500ms, color 500ms, transform 500ms;
+}
+
+.headerLinksExternal .fa.fa-twitter:hover{
+	background-color: $twitter-blue;
+	color:white;
+}
+.headerLinksExternal .fa.fa-linkedin:hover{
+	background-color: $linkedin-blue;
+	color:white;
+}
+.headerLinksExternal .fa.fa-github:hover{
+	color: $github-gray;
+	background-color: $white;
+}
+
+@media (max-width: 700px){
+	.headerLinksExternal .fa.fa-twitter,
+	.headerLinksExternal .fa.fa-linkedin{
+		color: $gray;
+	}
+}
+
+@media (min-width: 700px){
+	.headerLinksExternal .fa:hover{
+		transform: scale(1.8,1.8);
+	}
+}
