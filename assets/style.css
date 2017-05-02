@@ -2576,6 +2576,10 @@ html {
   font-size: 24px;
   letter-spacing: 3px; }
 
+@media (min-width: 700px) {
+  .pageBody__tagline {
+    position: relative;
+    left: 30px; } }
 .pageBody {
   margin: 60px 0px; }
 
