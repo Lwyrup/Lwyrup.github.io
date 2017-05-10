@@ -2434,9 +2434,12 @@ html {
   margin: 100px 0px; }
 
 .half-column {
-  width: calc(50% - 20px);
-  margin: 0px 10px;
+  width: calc(50% - 50px);
+  margin: 0px 25px;
   float: left; }
+
+.l-box {
+  margin-bottom: 80px; }
 
 .headerBg {
   background: #FFA500;
@@ -2870,5 +2873,17 @@ html {
   width: 250px;
   border-radius: 100%;
   margin-left: 30px; }
+
+.box__header {
+  font-size: 30px;
+  font-family: "EB Garamond", serif;
+  margin-bottom: 14px; }
+
+.box__body {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 22px;
+  font-weight: bolder;
+  line-height: 1.4;
+  letter-spacing: .04em; }
 
 /*# sourceMappingURL=style.css.map */
