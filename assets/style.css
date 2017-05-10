@@ -2428,6 +2428,11 @@ html {
   display: flex;
   justify-content: space-between; }
 
+.l-bio {
+  display: flex;
+  align-items: center;
+  margin: 100px 0px; }
+
 .headerBg {
   background: #FFA500;
   /* For browsers that do not support gradients */
@@ -2805,8 +2810,8 @@ html {
   position: relative;
   padding: .5em .75em;
   text-align: center;
-  border: 50px solid #fff;
-  color: #fff;
+  border: 50px solid #000;
+  color: #000;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
@@ -2832,7 +2837,7 @@ html {
   right: .25em;
   bottom: .25em;
   left: .25em;
-  background-color: #fff; }
+  background-color: #000; }
 
 /* Use Background-size cover for photo background and no-repeat background */
 .clip-text--cover,
@@ -2845,6 +2850,20 @@ html {
 
 /* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
 .clip-text_one {
-  background-image: url(http://cdn8.staztic.com/app/a/6278/6278761/hd-abstract-wallpapers-1-0-s-307x512.jpg); }
+  background-image: url(https://c2.staticflickr.com/4/3610/3334825760_5bc725bbd5_b.jpg); }
+
+.bio {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 41px 16px; }
+
+.bio__blurb {
+  font-size: 30px;
+  font-family: "EB Garamond", serif; }
+
+.bio__image {
+  width: 250px;
+  border-radius: 100%;
+  margin-left: 30px; }
 
 /*# sourceMappingURL=style.css.map */
