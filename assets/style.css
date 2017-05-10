@@ -2424,6 +2424,10 @@ html {
   justify-content: center;
   align-items: center; }
 
+.l-navbar {
+  display: flex;
+  justify-content: space-between; }
+
 .headerBg {
   background: #FFA500;
   /* For browsers that do not support gradients */
@@ -2776,5 +2780,16 @@ html {
 
 .reversefootnote {
   color: #A0A0A0; }
+
+.outerNavbar {
+  background-color: #1C181C;
+  padding: 16px 0px; }
+
+.navLink {
+  margin: 0px 10px;
+  color: #fff; }
+
+.navLink:hover {
+  color: #FFA500; }
 
 /*# sourceMappingURL=style.css.map */
