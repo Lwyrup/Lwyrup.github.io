@@ -2787,7 +2787,10 @@ html {
 
 .navLink {
   margin: 0px 10px;
-  color: #fff; }
+  color: #fff;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+  font-size: 18px; }
 
 .navLink:hover {
   color: #FFA500; }
