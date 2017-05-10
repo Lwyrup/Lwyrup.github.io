@@ -8,8 +8,8 @@
     position: relative;
     padding: .5em .75em;
     text-align: center;
-    border: 50px solid $white;
-    color: $white;
+    border: 50px solid $black;
+    color: $black;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -38,7 +38,7 @@
     right: .25em;
     bottom: .25em;
     left: .25em;
-    background-color: $white;
+    background-color: $black;
 }
 
 /* Use Background-size cover for photo background and no-repeat background */
@@ -53,5 +53,5 @@
 
 /* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
 .clip-text_one {
-    background-image: url(http://cdn8.staztic.com/app/a/6278/6278761/hd-abstract-wallpapers-1-0-s-307x512.jpg);
+    background-image: url(https://c2.staticflickr.com/4/3610/3334825760_5bc725bbd5_b.jpg);
 }
