@@ -1,5 +1,12 @@
 .l-bio{
-	display: flex;
-	align-items: center;
+
+	
 	margin: 100px 0px;
+}
+
+@media (min-width: 700px){
+	.l-bio{
+		display: flex;
+		align-items: center;
+	}
 }
