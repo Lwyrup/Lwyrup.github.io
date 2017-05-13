@@ -1,10 +1,10 @@
 /* Clip text element */
 .clip-text {
 	font-family: $anton;
-    font-size: 7em;
+    font-size: 5em;
     font-weight: bold;
     letter-spacing: 4px;
-    line-height: 1;
+    line-height: 1.2;
     position: relative;
     padding: .5em .75em;
     text-align: center;
@@ -12,6 +12,7 @@
     color: $black;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    word-wrap: break-word;
 }
 
 .clip-text:before,
@@ -54,4 +55,11 @@
 /* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
 .clip-text_one {
     background-image: url(https://c2.staticflickr.com/4/3610/3334825760_5bc725bbd5_b.jpg);
+}
+
+@media (min-width: 700px){
+    .clip-text{
+        min-width: 1000px;
+        font-size: 7em;
+    }
 }

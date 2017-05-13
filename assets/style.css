@@ -2811,17 +2811,18 @@ html {
 /* Clip text element */
 .clip-text {
   font-family: "Anton", sans-serif;
-  font-size: 7em;
+  font-size: 5em;
   font-weight: bold;
   letter-spacing: 4px;
-  line-height: 1;
+  line-height: 1.2;
   position: relative;
   padding: .5em .75em;
   text-align: center;
   border: 50px solid #000;
   color: #000;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
+  -webkit-text-fill-color: transparent;
+  word-wrap: break-word; }
 
 .clip-text:before,
 .clip-text:after {
@@ -2860,6 +2861,10 @@ html {
 .clip-text_one {
   background-image: url(https://c2.staticflickr.com/4/3610/3334825760_5bc725bbd5_b.jpg); }
 
+@media (min-width: 700px) {
+  .clip-text {
+    min-width: 1000px;
+    font-size: 7em; } }
 .bio {
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
