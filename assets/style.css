@@ -2435,11 +2435,11 @@ html {
   .l-bio {
     display: flex;
     align-items: center; } }
-.half-column {
-  width: calc(50% - 50px);
-  margin: 0px 25px;
-  float: left; }
-
+@media (min-width: 700px) {
+  .half-column {
+    width: calc(50% - 50px);
+    margin: 0px 25px;
+    float: left; } }
 .l-box {
   margin-bottom: 80px; }
 
