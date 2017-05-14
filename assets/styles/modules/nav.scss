@@ -18,3 +18,11 @@
 .navLink:hover{
 	color: $orange;
 }
+
+.navCenter{
+	text-align: center;
+}
+
+.navCenter .navLink{
+	margin: 0px 30px;
+}

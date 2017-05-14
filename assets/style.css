@@ -2428,6 +2428,9 @@ html {
   display: flex;
   justify-content: space-between; }
 
+.l-footnav {
+  margin-top: 100px; }
+
 .l-bio {
   margin: 100px 0px; }
 
@@ -2823,6 +2826,12 @@ html {
 
 .navLink:hover {
   color: #FFA500; }
+
+.navCenter {
+  text-align: center; }
+
+.navCenter .navLink {
+  margin: 0px 30px; }
 
 /* Clip text element */
 .clip-text {
