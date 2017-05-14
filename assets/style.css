@@ -2452,7 +2452,7 @@ html {
   margin: 20px 0px; }
 
 .contact {
-  margin-top: 200px; }
+  margin: 200px auto auto; }
 
 .headerBg {
   background: #FFA500;
@@ -2923,8 +2923,7 @@ html {
 
 .contact {
   border: 2px solid #E9EAE8;
-  padding: 10px 22px;
-  margin: auto; }
+  padding: 10px 22px; }
 
 .contact__title {
   font-family: "EB Garamond", serif;
