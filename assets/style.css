@@ -2836,7 +2836,8 @@ html {
 /* Clip text element */
 .clip-text {
   font-family: "Anton", sans-serif;
-  font-size: 5em;
+  font-size: 4em;
+  font-size: 10vmin;
   font-weight: bold;
   letter-spacing: 4px;
   line-height: 1.2;
@@ -2844,6 +2845,7 @@ html {
   padding: .5em .75em;
   text-align: center;
   border: 50px solid #000;
+  border: 8vmin solid #000;
   color: #000;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

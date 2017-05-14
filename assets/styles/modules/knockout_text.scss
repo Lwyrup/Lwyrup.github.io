@@ -1,7 +1,8 @@
 /* Clip text element */
 .clip-text {
 	font-family: $anton;
-    font-size: 5em;
+    font-size: 4em;
+    font-size: 10vmin;
     font-weight: bold;
     letter-spacing: 4px;
     line-height: 1.2;
@@ -9,6 +10,7 @@
     padding: .5em .75em;
     text-align: center;
     border: 50px solid $black;
+    border: 8vmin solid $black;
     color: $black;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
