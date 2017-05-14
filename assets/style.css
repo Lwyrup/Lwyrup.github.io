@@ -2443,6 +2443,14 @@ html {
 .l-box {
   margin-bottom: 80px; }
 
+.exampleBlock,
+.example {
+  margin: 80px 0px; }
+
+.example__images,
+.screenshot {
+  margin: 20px 0px; }
+
 .headerBg {
   background: #FFA500;
   /* For browsers that do not support gradients */
@@ -2892,6 +2900,18 @@ html {
   margin-bottom: 14px; }
 
 .box__body {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 22px;
+  font-weight: bolder;
+  line-height: 1.4;
+  letter-spacing: .04em; }
+
+.example__name {
+  font-size: 30px;
+  font-family: "EB Garamond", serif;
+  margin: 20px; }
+
+.example__description {
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 22px;
   font-weight: bolder;
