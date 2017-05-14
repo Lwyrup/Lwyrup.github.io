@@ -2451,6 +2451,9 @@ html {
 .screenshot {
   margin: 20px 0px; }
 
+.contact {
+  margin-top: 200px; }
+
 .headerBg {
   background: #FFA500;
   /* For browsers that do not support gradients */
@@ -2917,5 +2920,39 @@ html {
   font-weight: bolder;
   line-height: 1.4;
   letter-spacing: .04em; }
+
+.contact {
+  border: 2px solid #E9EAE8;
+  padding: 10px 22px;
+  margin: auto; }
+
+.contact__title {
+  font-family: "EB Garamond", serif;
+  font-size: 30px;
+  text-align: center;
+  text-transform: capitalize; }
+
+.contact__info,
+.contactLink {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 22px;
+  font-weight: bolder;
+  line-height: 1.4;
+  letter-spacing: .04em; }
+
+.contact__info,
+.contact__title {
+  margin: 16px 0px; }
+
+.contactLink {
+  border-bottom: 1px dashed;
+  color: #A0A0A0; }
+
+.contactLink:hover {
+  color: #32c9de; }
+
+@media (min-width: 500px) {
+  .contact {
+    width: 500px; } }
 
 /*# sourceMappingURL=style.css.map */
