@@ -2395,6 +2395,11 @@ html {
 @media (max-width: 700px) {
   .l-outerContainer {
     width: 100%; } }
+.l-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
 .l-headerLinksExternal {
   display: inline-flex;
   align-items: stretch;
