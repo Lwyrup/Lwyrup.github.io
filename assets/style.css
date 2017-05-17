@@ -2412,6 +2412,9 @@ html {
   align-items: center; }
 
 @media (max-width: 700px) {
+  .l-headerLinksExternal {
+    right: 0px; } }
+@media (max-width: 700px) {
   .l-desktop {
     display: none; } }
 
@@ -2500,7 +2503,8 @@ html {
   cursor: default; }
 
 .headerLinksInternal {
-  font-size: 26px; }
+  font-size: 26px;
+  line-height: 40px; }
 
 .headerLinksInternal a:hover {
   color: #fff; }
@@ -2559,7 +2563,10 @@ html {
 
   .headerInfo__title,
   .headerInfo__blurb {
-    color: #fff; } }
+    color: #fff; }
+
+  .dropNav {
+    padding: 18px 10px; } }
 .headerLinksExternal .fa.fa-twitter,
 .headerLinksExternal .fa.fa-linkedin,
 .headerLinksExternal .fa.fa-github.fa-lg {
@@ -2600,7 +2607,10 @@ html {
   .headerLinksExternal .fa.fa-twitter,
   .headerLinksExternal .fa.fa-linkedin {
     color: #DCDDDB;
-    margin: 0px 12px; } }
+    margin: 0px 12px; }
+
+  .headerLinksExternal .fa.fa-twitter {
+    margin-left: 0px; } }
 @media (min-width: 700px) {
   .headerLinksExternal .fa:hover {
     transform: scale(1.8, 1.8); } }

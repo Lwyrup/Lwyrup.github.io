@@ -33,6 +33,7 @@
 
 .headerLinksInternal{
 	font-size: 26px;
+	line-height: 40px;
 }
 
 .headerLinksInternal a:hover{
@@ -94,5 +95,9 @@
 	.headerInfo__title,
 	.headerInfo__blurb{
 		color: $white;
+	}
+
+	.dropNav{
+	    padding: 18px 10px;
 	}
 }
