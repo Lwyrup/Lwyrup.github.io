@@ -45,7 +45,7 @@
 
 .dropNav{
 	@include linear-gradient( $gray, $light-gray, $gray );
-    padding: 18px 24px 18px 0px;
+    padding: 18px 24px;
     position: absolute;
     width: 100%;
     left: 0px;
@@ -88,6 +88,7 @@
 	.headerInfo__blurb{
 		font-size: 20px;
 		text-align: left;
+		letter-spacing: 2px;
 	}
 
 	.headerInfo__title,

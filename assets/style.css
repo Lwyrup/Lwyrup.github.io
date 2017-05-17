@@ -2395,11 +2395,6 @@ html {
 @media (max-width: 700px) {
   .l-outerContainer {
     width: 100%; } }
-.l-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
-
 .l-headerLinksExternal {
   display: inline-flex;
   align-items: stretch;
@@ -2519,7 +2514,7 @@ html {
   /* For Opera 11.1 to 12.0 */
   background: linear-gradient(#DCDDDB, #E9EAE8, #DCDDDB);
   /* Standard syntax */
-  padding: 18px 24px 18px 0px;
+  padding: 18px 24px;
   position: absolute;
   width: 100%;
   left: 0px;
@@ -2554,7 +2549,8 @@ html {
 
   .headerInfo__blurb {
     font-size: 20px;
-    text-align: left; }
+    text-align: left;
+    letter-spacing: 2px; }
 
   .headerInfo__title,
   .headerInfo__blurb {
