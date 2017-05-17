@@ -1,5 +1,12 @@
-.l-article__share{
-	display: flex;
-	justify-content: center;
-    align-items: center;
+.article__share .fa.fa-twitter{
+	float: left;
+}
+
+@media (min-width: 700px){
+	.l-article__share{
+		display: flex;
+		justify-content: center;
+	    align-items: center;
+	    float: none;
+	}	
 }

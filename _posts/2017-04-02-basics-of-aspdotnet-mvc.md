@@ -8,7 +8,7 @@ For the last two weeks I've been messing with ASP .NET and have come a long way 
 
 ### What is ASP .NET?
 
-Well, ASP stands for (Active Server Pages)[https://en.wikipedia.org/wiki/Active_Server_Pages], which is a early server-side script engine developed by Microsoft for dynamically generated web pages. .NET then is a server-side web app framework and is written with CIL's[^1] and coverted by the CLR[^2]. Okay, so that was a bit technical, but basically with the .NET framework you can write code using a language that falls under the Common Intermediate Language umbrella. This typically is C#[^3] or VB[^4].
+Well, ASP stands for [Active Server Pages](https://en.wikipedia.org/wiki/Active_Server_Pages), which is a early server-side script engine developed by Microsoft for dynamically generated web pages. .NET then is a server-side web app framework and is written with CIL's[^1] and coverted by the CLR[^2]. Okay, so that was a bit technical, but basically with the .NET framework you can write code using a language that falls under the Common Intermediate Language umbrella. This typically is C#[^3] or VB[^4].
 
 Okay the confusing part is over now. To understand the idea of how ASP .NET works were going to describe it more abstractly.
 

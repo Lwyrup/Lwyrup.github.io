@@ -57,7 +57,7 @@
 .headerInfo__hamburger{
 	position: absolute;
 	right: 0px;
-	font-size: 66px;
+	font-size: 50px;
 }
 
 .headerInfo__hamburger,
@@ -79,6 +79,15 @@
 
 	.headerInfo__hamburger{
 		color: $dark-gray;
+	}
+
+	.headerInfo__title{
+		font-size: 40px;
+	}
+
+	.headerInfo__blurb{
+		font-size: 20px;
+		text-align: left;
 	}
 
 	.headerInfo__title,

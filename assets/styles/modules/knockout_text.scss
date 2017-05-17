@@ -23,7 +23,6 @@
     content: '';
 }
 
-/* Background */
 .clip-text:before {
     z-index: -2;
     top: 0;
@@ -33,7 +32,6 @@
     background-image: inherit;
 }
 
-/* Text Background (black zone) */
 .clip-text:after {
     position: absolute;
     z-index: -1;
@@ -44,7 +42,6 @@
     background-color: $black;
 }
 
-/* Use Background-size cover for photo background and no-repeat background */
 .clip-text--cover,
 .clip-text--cover:before {
 	background-repeat: no-repeat;
@@ -54,7 +51,6 @@
 	background-attachment: fixed;
 }
 
-/* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
 .clip-text_one {
     background-image: url(images/redPaint.jpg);
 }

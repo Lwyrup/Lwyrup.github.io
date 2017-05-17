@@ -2419,11 +2419,15 @@ html {
   .l-mobile {
     display: none; } }
 
-.l-article__share {
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+.article__share .fa.fa-twitter {
+  float: left; }
 
+@media (min-width: 700px) {
+  .l-article__share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: none; } }
 .l-headnav {
   display: flex;
   justify-content: space-between; }
@@ -2524,7 +2528,7 @@ html {
 .headerInfo__hamburger {
   position: absolute;
   right: 0px;
-  font-size: 66px; }
+  font-size: 50px; }
 
 .headerInfo__hamburger,
 .headerInfo__title,
@@ -2542,6 +2546,13 @@ html {
 
   .headerInfo__hamburger {
     color: #A0A0A0; }
+
+  .headerInfo__title {
+    font-size: 40px; }
+
+  .headerInfo__blurb {
+    font-size: 20px;
+    text-align: left; }
 
   .headerInfo__title,
   .headerInfo__blurb {
@@ -2723,6 +2734,9 @@ html {
   font-size: 24px;
   line-height: 1.5; }
 
+.article__body p {
+  word-break: break-word; }
+
 .article__body h3 {
   font-size: 34px;
   margin-top: 100px; }
@@ -2856,7 +2870,6 @@ html {
   position: absolute;
   content: ''; }
 
-/* Background */
 .clip-text:before {
   z-index: -2;
   top: 0;
@@ -2865,7 +2878,6 @@ html {
   left: 0;
   background-image: inherit; }
 
-/* Text Background (black zone) */
 .clip-text:after {
   position: absolute;
   z-index: -1;
@@ -2875,7 +2887,6 @@ html {
   left: .25em;
   background-color: #000; }
 
-/* Use Background-size cover for photo background and no-repeat background */
 .clip-text--cover,
 .clip-text--cover:before {
   background-repeat: no-repeat;
@@ -2884,7 +2895,6 @@ html {
   background-position: 50% 50%;
   background-attachment: fixed; }
 
-/* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
 .clip-text_one {
   background-image: url(images/redPaint.jpg); }
 
