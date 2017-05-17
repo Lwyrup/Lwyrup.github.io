@@ -2599,7 +2599,8 @@ html {
 @media (max-width: 700px) {
   .headerLinksExternal .fa.fa-twitter,
   .headerLinksExternal .fa.fa-linkedin {
-    color: #DCDDDB; } }
+    color: #DCDDDB;
+    margin: 0px 12px; } }
 @media (min-width: 700px) {
   .headerLinksExternal .fa:hover {
     transform: scale(1.8, 1.8); } }
