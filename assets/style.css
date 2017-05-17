@@ -2428,9 +2428,11 @@ html {
     justify-content: center;
     align-items: center;
     float: none; } }
-.l-headnav {
-  display: flex;
-  justify-content: space-between; }
+.navRight {
+  float: right; }
+
+.navLeft {
+  float: left; }
 
 .l-footnav {
   margin-top: 100px; }
