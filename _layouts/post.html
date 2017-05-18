@@ -12,11 +12,7 @@ layout: default
 			{{ content }}
 		</div>
 
-		<div class="article__share l-article__share clearFix">
-			<i class="fa fa-twitter" aria-hidden="true"></i>
-			<p>If you liked this article and think others should read it, please 
-			<a target="_blank" href="http://twitter.com/share?url={{ page.url | absolute_url }}">share it on Twitter</a>.</p>
-		</div>
+		{% include share.html %}
 	</div>
 
 </div>
