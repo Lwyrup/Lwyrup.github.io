@@ -5,3 +5,11 @@
 .l-mobile{
 	@include desktopDisplay( none);
 }
+
+.l-narrow{
+	@include non-narrowDisplay( none );
+}
+
+.l-nonNarrow{
+	@include narrowDisplay( none );
+}
