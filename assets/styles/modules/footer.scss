@@ -3,31 +3,32 @@
 	background-color: $pencil-gray;
 }
 
-.footer{
-	text-align: center;
-	padding: 16px 0px;
+.footerBg{
 	border-top: 1px solid $gray;
 	margin-top: 50px;
+	padding: 16px 0px;
+}
+
+.footer{
+	text-align: center;
 }
 
 .footer__item{
 	padding: 5px 0px;
 }
 
-
-
 .footer__item a{
 	font-family: $font-pri;
 	font-size: 22px;
 	padding: 0px 14px;
-	color: $black;
+	color: $dark-gray;
 }
 
 .footer__item a:hover{
 	color: $orange;
 }
 
-@media (max-width: 700px){
+@media (max-width: 570px){
 	.footer__item:first-child{
 		margin-bottom: 30px;
 	}
