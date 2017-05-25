@@ -1,7 +1,8 @@
 ---
-title: How to fill text with an image
+title: "How to fill text with an image"
+image: "/assets/images/knockout.png"
 ---
-<img src="/assets/images/knockout.png" alt="The word hello using a background as its color.">
+<img src="{{ page.image }}" alt="The word hello using a background as its color.">
 Sure solid colors fulfill the basic needs of styling text but, its quite boring. Homogeneous, bland, and with no real emphasis. If you need to really emphasize and grab attention using plain text a great option is using CSS to create a knockout effect. You get to choose an image with intricate details and stimulating patterns to color the text. Let me show you how.
 
 We'll start with creating a HTML and, CSS file. From there go into the HTML head and put a link to our style sheet. Let's also add the text we want to style into our body and give it a class.

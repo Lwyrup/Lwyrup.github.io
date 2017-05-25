@@ -1,7 +1,8 @@
 ---
-title: Basic structure of ASP .NET MVC
+title: "Basic structure of ASP .NET MVC"
+image: "/assets/images/mvc_role_diagram.png"
 ---
-<img src="/assets/images/mvc_role_diagram.png" alt="Diagram showing the flow of MVC.">
+<img src="{{ page.image }}" alt="Diagram showing the flow of MVC.">
 ASP .NET MVC, looks intimidating doesn't it? Despite the acronyms, if you know about models, views, and controllers, then you can easily find out ASP .NET does. If you didn't catch that I just gave away what the MVC stands for, models, views, and controllers. So that being said lets dive into an shallow overview of ASP .NET.
 
 For the last two weeks I've been messing with ASP .NET and have come a long way from struggling to understand routing patterns, but I digress. You already know MVC but, what is ASP and .NET?
