@@ -2,7 +2,7 @@
 title: "How to Create a Dynamic Navigation Bar"
 ---
 
-<img src="/assets/images/hamburger.png">
+<img src="/assets/images/hamburger.png" alt="Image of the triple bar icon or, hamburger.">
 If you've spent time on the Internet then chances are you've seen somewhere a site with a drop down menu or navigation menu. They are handy little things that allow more space on the page for content, this is especially useful for mobile views where you have less space to fit content. So, let's delve into and start typing one up.
 
 

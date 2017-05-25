@@ -1,14 +1,14 @@
 ---
 title: Basic structure of ASP .NET MVC
 ---
-<img src="/assets/images/mvc_role_diagram.png">
+<img src="/assets/images/mvc_role_diagram.png" alt="Diagram showing the flow of MVC.">
 ASP .NET MVC, looks intimidating doesn't it? Despite the acronyms, if you know about models, views, and controllers, then you can easily find out ASP .NET does. If you didn't catch that I just gave away what the MVC stands for, models, views, and controllers. So that being said lets dive into an shallow overview of ASP .NET.
 
 For the last two weeks I've been messing with ASP .NET and have come a long way from struggling to understand routing patterns, but I digress. You already know MVC but, what is ASP and .NET?
 
 ### What is ASP .NET?
 
-Well, ASP stands for [Active Server Pages](https://en.wikipedia.org/wiki/Active_Server_Pages), which is a early server-side script engine developed by Microsoft for dynamically generated web pages. .NET then is a server-side web app framework and is written with CIL's[^1] and coverted by the CLR[^2]. Okay, so that was a bit technical, but basically with the .NET framework you can write code using a language that falls under the Common Intermediate Language umbrella. This typically is C#[^3] or VB[^4].
+Well, ASP stands for [Active Server Pages](https://en.wikipedia.org/wiki/Active_Server_Pages), which is a early server-side script engine developed by Microsoft for dynamically generated web pages. .NET then is a server-side web app framework and is written with CIL's[^1] and converted by the CLR[^2]. Okay, so that was a bit technical, but basically with the .NET framework you can write code using a language that falls under the Common Intermediate Language umbrella. This typically is C#[^3] or VB[^4].
 
 Okay the confusing part is over now. To understand the idea of how ASP .NET works were going to describe it more abstractly.
 
@@ -26,7 +26,7 @@ Route.MapRoute(
 );
 ```
 
-The url:... is what the pattern is and, below is the deafults if one of the slugs is empty.
+The url:... is what the pattern is and, below is the defaults if one of the slugs is empty.
 {:.callout}
 
 The '/' is generic enough and fits the url pattern but, oh no there's no controller or action specify in '/'. The program sees this and fits the defaults into the empty slots so, the users request for '/' actually acts as if it were '/home/index'. 
