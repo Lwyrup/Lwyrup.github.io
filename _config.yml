@@ -21,6 +21,7 @@ linkedin: https://www.linkedin.com/in/spencergerdes/
 github: https://github.com/Lwyrup
 description: > # this means to ignore newlines until "baseurl:"
   I'm Spencer Gerdes a web developer and a naturally curious person who loves finding out what makes things tick. 
+image: /assets/images/ogimage.png
 repository: Lwyrup/Lwyrup.github.com
 
 # Build settings - DO NOT EDIT, UNLESS YOU KNOW WHAT YOU'RE DOING.
