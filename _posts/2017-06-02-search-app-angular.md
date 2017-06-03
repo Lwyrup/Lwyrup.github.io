@@ -424,7 +424,7 @@ app.controller('myCtrl', function($scope){
 	</div>
 ```
 
-Viola! Now you can close the about info box if and when you please. If you were just following along at home don't fear because the finished application is right here! Tada!
+Viola! Now you can close the about info box if and when you please. If you were just reading along at home don't fear because the finished application, with a few layers of paint, is right here! Tada!
 
 {% include demo-peeple-finder.html %}
 
