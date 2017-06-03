@@ -2486,9 +2486,9 @@ html {
 @media (min-width: 570px) {
   .footer__item {
     display: inline-block; } }
-.l-selectedBox {
-  float: right; }
-
+@media (min-width: 700px) {
+  .HTMLDemo .l-selectedBox {
+    float: right; } }
 .headerBg {
   background: #FFA500;
   /* For browsers that do not support gradients */
@@ -3041,22 +3041,55 @@ html {
 .HTMLDemo {
   border: 1px solid #000;
   padding: 10px;
-  min-height: 350px; }
+  min-height: 550px;
+  background-color: #A0A0A0; }
 
-.selectedBox {
-  width: 600px; }
+.HTMLDemo .selectedBox {
+  margin: 30px 0px;
+  padding: 16px;
+  border: 1px solid #E9EAE8;
+  box-shadow: -10px -1px 40px;
+  background-color: whitesmoke; }
 
-.tableHeader,
-.tableCell {
+.HTMLDemo .tableHeader,
+.HTMLDemo .tableCell {
   padding: 0px 6px; }
 
-.tableHeader {
+.HTMLDemo .tableHeader {
   font-size: 16px; }
 
-.tableCell {
+.HTMLDemo .tableCell {
   text-align: center; }
 
-.selectedItem {
-  background-color: red; }
+.HTMLDemo .searchResult,
+.HTMLDemo .about__close {
+  cursor: pointer; }
+
+.HTMLDemo .searchResult__selected {
+  background: #A0A0A0;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#A0A0A0, red, #A0A0A0);
+  /* For Safari 5.1 to 6.0 */
+  background: -moz-linear-gradient(#A0A0A0, red, #A0A0A0);
+  /* For Firefox 3.6 to 15 */
+  background: -o-linear-gradient(#A0A0A0, red, #A0A0A0);
+  /* For Opera 11.1 to 12.0 */
+  background: linear-gradient(#A0A0A0, red, #A0A0A0);
+  /* Standard syntax */
+  border-left: 1px solid black;
+  border-right: 1px solid black; }
+
+.HTMLDemo .header__title {
+  font-size: 50px;
+  font-weight: bolder; }
+
+.HTMLDemo .header__tagline {
+  font-size: 20px;
+  font-style: italic; }
+
+@media (min-width: 700px) {
+  .HTMLDemo .selectedBox {
+    width: 600px;
+    margin: 0px; } }
 
 /*# sourceMappingURL=style.css.map */
