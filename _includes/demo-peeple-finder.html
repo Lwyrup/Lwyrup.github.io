@@ -4,19 +4,19 @@
 	<script type="text/javascript" src="/assets/scripts/angular-demo-ctrl.js"></script>
 
 	<header>
-		<h1>Peeple Findr</h1>
-		<small>All your creeping needs</small>
+		<h1 class="header__title">Peeple Findr</h1>
+		<small class="header__tagline">All your creeping needs</small>
 	</header>
 
 	<div ng-app="demoApp" ng-controller="demoCtrl">
-		<input ng-model="search">
+		<input placeholder="Find someone" ng-model="search">
 
 		<div class="selectedBox l-selectedBox" ng-show="selected">
 			<h2>About &mdash; 
 				<span ng-bind="selected.fname"></span> <span ng-bind="selected.lname"></span>
 			</h2>
 			<p ng-bind="selected.bio"></p>
-			<button ng-click="clearSelected()">Close</button>
+			<button class="about__close" ng-click="clearSelected()">Close</button>
 		</div>
 
 		<div ng-show="search">
@@ -30,7 +30,7 @@
 				</thead>
 				<tbody>
 					<tr class="searchResult" 
-						ng-class="{'selectedItem': $index == selectedResultIndex}" 
+						ng-class="{'searchResult__selected': $index == selectedResultIndex}" 
 						ng-repeat="person in people | filter:search" 
 						ng-click="selectPerson(person, $index)"
 					>
