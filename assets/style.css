@@ -2486,6 +2486,9 @@ html {
 @media (min-width: 570px) {
   .footer__item {
     display: inline-block; } }
+.l-selectedBox {
+  float: right; }
+
 .headerBg {
   background: #FFA500;
   /* For browsers that do not support gradients */
@@ -3035,5 +3038,25 @@ html {
 @media (max-width: 570px) {
   .footer__item:first-child {
     margin-bottom: 30px; } }
+.HTMLDemo {
+  border: 1px solid #000;
+  padding: 10px;
+  min-height: 350px; }
+
+.selectedBox {
+  width: 600px; }
+
+.tableHeader,
+.tableCell {
+  padding: 0px 6px; }
+
+.tableHeader {
+  font-size: 16px; }
+
+.tableCell {
+  text-align: center; }
+
+.selectedItem {
+  background-color: red; }
 
 /*# sourceMappingURL=style.css.map */
