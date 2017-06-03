@@ -23,11 +23,15 @@ app.controller('demoCtrl',function($scope){
 		}
     ];
 
-	$scope.selectPerson = function(x){
+	$scope.selectPerson = function(x, $index){
 		$scope.selected = x;
+		$scope.selectedResultIndex = $index;
 	};
 
 	$scope.clearSelected = function(){
 		$scope.selected = null;
+		$scope.selectedResultIndex = -1;
 	};
+
+	$scope.selectedResultIndex = -1;
 });
