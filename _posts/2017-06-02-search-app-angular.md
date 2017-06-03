@@ -3,7 +3,7 @@ title: "Creating a search app using AngularJS"
 image: "/assets/images/angular.png"
 ---
 <img src="{{ page.image }}" alt="Logo for AngularJS.">
-AngularJS what is it? If you're a dev you either know it or have heard about it, and if you're not a dev you probably are wondering what in the world is Angular? Well, AngularJS is a front-end JavaScript framework used for creating single-page web applications. Using custom tag attributes, AngularJS allows you to do all the templating in HTML. In short it lets you link your JS to your HTML and vice-versa, and is great for creating user interfaces. Enough explaining lets get coding.
+AngularJS what is it? If you're a dev you either know it or have heard about it, and if you're not a dev you probably are wondering what in the world is Angular? Well, AngularJS is a front-end JavaScript framework used for creating single-page web applications. Using custom tag attributes, AngularJS allows you to do all the templating in HTML. In short it lets you link your JS to your HTML and vice-versa, and is great for creating user interfaces. Enough explaining lets get coding. <a href="/2017/06/02/search-app-angular.html#demo">See the app we will be building.</a>
 
 ### Setup
 
@@ -424,7 +424,7 @@ app.controller('myCtrl', function($scope){
 
 Viola! Now you can close the about info box if and when you please. If you were just following along at home don't fear because the finished application is right here! Tada!
 
-<div class="HTMLDemo clearFix" style="border: 1px solid black; padding: 10px; min-height: 350px;">
+<div class="HTMLDemo clearFix"  id="demo" style="border: 1px solid black; padding: 10px; min-height: 350px;">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 	<script type="text/javascript" src="/assets/scripts/angular-demo-app.js"></script>
 	<script type="text/javascript" src="/assets/scripts/angular-demo-ctrl.js"></script>
@@ -434,7 +434,7 @@ Viola! Now you can close the about info box if and when you please. If you were 
 		<small>All your creeping needs</small>
 	</header>
 
-	<div ng-app="demoApp" ng-controller="demoCtrl" id="demo">
+	<div ng-app="demoApp" ng-controller="demoCtrl">
 		<input ng-model="search">
 
 		<div style="float:right; width:600px;" ng-show="selected">
