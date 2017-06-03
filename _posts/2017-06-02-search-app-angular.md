@@ -3,7 +3,7 @@ title: "Creating a search app using AngularJS"
 image: "/assets/images/angular.png"
 ---
 <img src="{{ page.image }}" alt="Logo for AngularJS.">
-AngularJS what is it? If you're a dev you either know it or have heard about it, and if you're not a dev you probably are wondering what in the world is Angular? Well, AngularJS is a front-end JavaScript framework used for creating single-page web applications. Using custom tag attributes, AngularJS allows you to do all the templating in HTML. In short it lets you link your JS to your HTML and vice-versa, and is great for creating user interfaces. Enough explaining lets get coding. <a href="/2017/06/02/search-app-angular.html#demo">See the app we will be building.</a>
+AngularJS, what is it? If you're a dev you either know it, or have heard about it, and if you're not a dev you probably are wondering what in the world is Angular? Well, AngularJS is a front-end JavaScript framework used for creating single-page web applications. Using custom tag attributes, AngularJS allows you to do all the templating in HTML. In short it lets you link your JS to your HTML and vice-versa, and is great for creating user interfaces. Enough explaining let's get coding. <a href="/2017/06/02/search-app-angular.html#demo">See the app we will be building.</a>
 
 ### Setup
 
@@ -11,7 +11,7 @@ First we will create our workspace by creating a folder named 'angularJS-search'
 
 ### Laying the Plan
 
-So our app will be a pseudo search engine that searches for people, as creepy as that sounds. We'll define a person as 3 simple things a first name, last name, and a short bio about that person. The page will have a input box where you type in characters, and it'll filter out people who don't match the filter. Lastly when clicking on a person from the results list it will show us their bio.
+So our app will be a pseudo search engine that searches for people, as creepy as that sounds. We'll define a person as 3 simple things a first name, last name, and a short bio about that person. The page will have an input box where you type in characters, and it'll filter out people who don't match the filter. Lastly when clicking on a person from the results list it will show us their bio.
 
 Now that we have a plan we'll start with the HTML templating.
 
@@ -59,11 +59,11 @@ We start by dream coding[^2] the ideal structure we want for our search applicat
 </body>
 </html>
 ```
-This provides us with this basic layout with our static values. Now that we have our basic structure we'll now move onto using AngularJS to bring it to life.
+This provides us with this basic layout with our static values. Now that we have our basic structure we'll now move to using AngularJS to bring it to life.
 
 ### The Scripts and AngularJS
 
-To get AngularJS all we need to do is add a script tag referencing the file, whether that be a url for a CDN or if it is saved within your scripts folder. We will add the tag along with tags for our other JavaScript files.
+To get AngularJS all we need to do is add a script tag refering to the file, whether that be a url for a CDN or if it's saved within your scripts folder. We will add the tag along with tags for our other JavaScript files.
 
 ```html
 <!DOCTYPE html>
@@ -156,7 +156,7 @@ We use the app variable we defined in the myApp.js to add a controller for our s
 		...
 ```
 
-With the controller and app defined and connected we can start making magic. Remember when you wrote ng-model="search" and ng-bind="search"? How does it work? It works by creating a variable search in our apps $scope, mapping the value of the input to the variable, and then inserting the variables value into the bound element. Since search is actually a variable that means we can define it in our JavaScript. In our controller lets try it.
+With the controller and app defined and connected we can start making magic. Remember when you wrote ng-model="search" and ng-bind="search"? How does it work? It works by creating a variable search in our apps $scope, mapping the value of the input to the variable, and then inserting the variables value into the bound element. Since search is actually a variable that means we can define it in our JavaScript. In our controller let's try it.
 
 ```javascript
 app.controller('myCtrl', function($scope){
@@ -194,7 +194,7 @@ app.controller('myCtrl', function($scope){
 });
 ```
 
-People are now defined and have our 3 properties of a person. Say goodbye to the hard coded row search result and say hello to ng-repeat. ng-repeat will allow us to iterate through an array and is how we'll display our people.
+People are now defined and have our 3 properties of a person. Say goodbye to the hard-coded row search result and say hello to ng-repeat. ng-repeat will allow us to iterate through an array and is how we'll display our people.
 
 ```html
 ...
@@ -247,7 +247,7 @@ Upon refreshing your browser you should see the table body filled with our peopl
 </html>
 ```
 
-Thats all it takes, no convoluted long method to match, check, and so on. It's actually really cool how easy the filter filter makes this. So the filter looks at our person objects and checks if the properties contain the value of our search variable. It looks at the first name, last name, and the bio! So you can search 'wwe' and stone cold will show up!
+That's all it takes, no convoluted long method to match, check, and so on. It's actually really cool how easy the filter filter makes this. So the filter looks at our person objects and checks if the properties contain the value of our search variable. It looks at the first name, last name, and the bio! So you can search 'wwe' and stone cold will show up!
 
 The last functionality we'll add will be dynamically generating the selected person. Deja vu, we're using another directive. This directive is ng-click, and can be essentially acts as click event listener. When an element with the ng-click directive is clicked it will execute the expression defined.
 
