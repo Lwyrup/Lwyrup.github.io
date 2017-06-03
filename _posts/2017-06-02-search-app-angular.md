@@ -304,7 +304,9 @@ So, we now have a person object stored in the selected variable, have complete a
 		<input ng-model="search">
 
 		<div style="float:right; width:500px;">
-			<h2>About &mdash; {{ selected.fname + ' ' + selected.lname }}</h2>
+			<h2>About &mdash; 
+				<span ng-bind="selected.fname"></span> <span ng-bind="selected.lname"></span>
+			</h2>
 			<p ng-bind="selected.bio"></p>
 			<a href='#'>Close</a>
 		</div>
@@ -322,7 +324,7 @@ var app = angular.module('searchApp',[]);
 
 app.directive("searchStatus", function(){
 	return{
-		template: "<p>People found matching<span ng-bind="search"></span></p>"
+		template: "<p>People found matching<span ng-bind='search'></span></p>"
 	}
 });
 ```
@@ -424,46 +426,7 @@ app.controller('myCtrl', function($scope){
 
 Viola! Now you can close the about info box if and when you please. If you were just following along at home don't fear because the finished application is right here! Tada!
 
-<div class="HTMLDemo clearFix"  id="demo" style="border: 1px solid black; padding: 10px; min-height: 350px;">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	<script type="text/javascript" src="/assets/scripts/angular-demo-app.js"></script>
-	<script type="text/javascript" src="/assets/scripts/angular-demo-ctrl.js"></script>
-
-	<header>
-		<h1>Peeple Findr</h1>
-		<small>All your creeping needs</small>
-	</header>
-
-	<div ng-app="demoApp" ng-controller="demoCtrl">
-		<input ng-model="search">
-
-		<div style="float:right; width:600px;" ng-show="selected">
-			<h2>About &mdash; 
-				<span ng-bind="selected.fname"></span> <span ng-bind="selected.lname"></span>
-			</h2>
-			<p ng-bind="selected.bio"></p>
-			<button ng-click="clearSelected()">Close</button>
-		</div>
-
-		<div ng-show="search">
-		<p>People found matching <span ng-bind="search"></span></p>
-			<table>
-				<thead>
-					<tr>
-						<th>First Name</th>
-						<th>Last Name</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="person in people | filter:search" ng-click="selectPerson(person)">
-						<td ng-bind="person.fname"></td>
-						<td ng-bind="person.lname"></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-</div>
+{% include demo-peeple-finder.html %}
 
 ### Conclusion
 
