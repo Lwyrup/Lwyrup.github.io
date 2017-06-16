@@ -113,12 +113,217 @@ namespace ComicalDelights.Core.Models
 
 ```
 
-Presto we have our simple models defined! For the sake of simplicity we are going to store our Comic and ComicSeries data into our code. Make a folder called 'Repository' and inside that a new csharp class called ComicRepository.cs. This will be our database layer, responsible for getting our data. This class is going to have a collection of methods that we use to query our data, and a single variable to act as our database. We will want methods for getting all comics, one comic by id, all series, and one series by id.
+Presto we have our simple models defined! For the sake of simplicity we are going to store our Comic and ComicSeries data into our code. Make a folder called 'Repository' and inside that a new csharp class called ComicRepository.cs. This will be our database layer, responsible for getting our data. This class is going to have a collection of methods that we use to query our data, and a single variable to act as our database. We will want methods for getting all comics, one comic by id, all series, and comics of a single series.
 
 ```csharp
+using System;
+using ComicalDelights.Core.Models;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ComicalDelights.Core.Repository
+{
+    public class ComicRepository
+    {
+        public ComicRepository()
+        {
+        }
+
+        public List<Comic> getAllComics()
+        {
+			IEnumerable<Comic> comics =
+			 from comicSeries in comicDatabase
+			 from comic in comicSeries.comics
+			 select comic;
+			return comics.ToList<Comic>();
+        }
+
+        public Comic getComicById( int id )
+        {
+			IEnumerable<Comic> comics =
+			 from comicSeries in comicDatabase
+			 from comic in comicSeries.comics
+             where comic.comicId == id
+             select comic;
+            return comics.FirstOrDefault();
+        }
+
+        public List<ComicSeries> getAllComicSeries()
+        {
+            return comicDatabase;
+        }
+
+        public List<Comic> getComicsBySeries(int id)
+        {
+            var group = comicDatabase.Where(s => s.comicSeriesId == id).FirstOrDefault();
+            if (group != null)
+            {
+                return group.comics;
+            }
+            return null;
+        }
+
+        public List<ComicSeries> comicDatabase = new List<ComicSeries>()
+        {
+            new ComicSeries()
+            {
+                comicSeriesId = 1,
+                seriesName = "X-Men",
+                comics = new List<Comic>()
+                {
+                    new Comic()
+                    {
+                        comicId = 1,
+                        imagePath = "comic1",
+                        title = "If Iceman should fail..!",
+                        issueNumber = 18,
+                        issueDescription = "Professor X, Angel, Cyclops, and Marvel Girl have all been defeated by Magneto, who put the team into a high altitude hot-air balloon, hoping that his hated foes would perish once it reaches its destination of 100,000 feet. Magneto revels over the victory, magnetically lifting the mansion out of its foundation. He then decides to use the mansion as his own base of power then sets the house back down to the ground. Entering the residence of his hated foes, he then uses his magnetic powers to destroy Cerebro. However, his destruction is interrupted when the Worthingtons -- Warren's parents -- arrive for a visit. Magneto confronts them at the front door and uses magnetic hypnotism to put them under his thrall, ordering them to go sleep upstairs in the upper bedrooms. Magneto then comes to realize that one of the X-Men -- Iceman -- is missing, and waits for him to return to the mansion so that his revenge can be complete. Magneto boasts how Iceman is the weakest of all the X-Men.",
+                        price = 4.00
+                    },
+					new Comic()
+					{
+						comicId = 2,
+						imagePath = "comic2",
+						title = "The End of the X-Men!",
+						issueNumber = 46,
+						issueDescription = "The X-Men have returned to the grave of the late Professor Xavier to pay their respects, each member lost in thought over what the Professor meant to them and what the future of the X-Men will be. Their vigil is interrupted by FBI agent Duncan, who has come to speak with the X-Men. Returning to the Professor's mansion, Nelson & Murdock co-partner Foggy Nelson is on site to read Xavier's will. To everyone's surprise, all of the Professor's assets have been willed over to Scott for the operation of a special charitable fund, also naming the other students as trustees, leaving behind all his possessions to them. After the will reading is completed, Foggy leaves to put the will through probate, allowing for the X-Men to return their attention to Agent Duncan who wishes to discuss an important matter with them.",
+						price = 3.50
+					},
+					new Comic()
+					{
+						comicId = 3,
+						imagePath = "comic3",
+						title = "City of Mutants",
+						issueNumber = 50,
+						issueDescription = "With Iceman and Lorna Dane captured, Mesmero takes them to his secret \"City of Mutants\", the staging ground for his mutant militia. There, Iceman is imprisoned while Mesmero's scientists work to awaken Lorna's latent mutant powers. Meanwhile, the other X-Men have stormed Mesmero's San Francisco mansion to find opposition from his Demi-Men who easily defeat the group with a special gas apparently created by Magneto himself. With the X-Men downed, the squad leader of the Demi-Men orders them taken to the Mutant City.",
+						price = 3.30
+					}
+                }
+            },
+            new ComicSeries()
+            {
+                comicSeriesId = 2,
+                seriesName = "The Walking Dead",
+                comics = new List<Comic>()
+                {
+                    new Comic()
+                    {
+                        comicId = 4,
+                        imagePath = "comic4",
+                        title = "The Whisperer War part 1 of 6",
+                        issueNumber = 157,
+                        issueDescription = "The survivors have set up checkpoints that different subgroups guard and keep clear. A week has passed since Negan went missing. Dwight, Laura, Magna, and Heath are monitoring a checkpoint when they spot Negan, who has a bit of stubble growing on his face. Dwight wants Magna to shoot him immediately, but she refuses. When it is clear that he is unarmed and not hostile, they agree to take him back to Rick.",
+                        price = 7.88
+                    },
+					new Comic()
+					{
+						comicId = 5,
+						imagePath = "comic5",
+						title = "The Whisperer War part 4 of 6",
+						issueNumber = 160,
+						issueDescription = "Vincent is still making his way back from the Sanctuary when he comes across a roamer. Too tired to fight, he begins to panic until Heath arrives on horseback and kills the roamer. Vincent climbs on the horse and they ride off.",
+						price = 7.88
+					}
+                }
+            },
+            new ComicSeries()
+            {
+                comicSeriesId = 3,
+                seriesName = "Batman 2016",
+                comics = new List<Comic>()
+                {
+					new Comic()
+					{
+						comicId = 6,
+						imagePath = "comic6",
+						title = "NIGHT OF THE MONSTER MEN part 4",
+						issueNumber = 8,
+						issueDescription = "The giant monsters might be bad, but Gotham’s heroes encounter a whole new threat level when two of their own start terrorizing the city! Batman must face the horrifying possibility of losing two of his closest allies to Hugo Strange’s vicious attack.",
+						price = 2.99
+					},
+					new Comic()
+					{
+						comicId = 7,
+						imagePath = "comic7",
+						title = "STREETS AND SWAMPS",
+						issueNumber = 15,
+						issueDescription = "Swamp Thing comes to Gotham City with a mysterious request for Batman—but these longtime allies will have to make up for lost time and work together in order to confront a growing threat that only they can stop!",
+						price = 2.99
+					}
+                }
+            }
+        };
+    }
+}
+```
+
+Now we have our data and methods by which to access, and filter our data. Last thing we're going to do is create a service to further abstract our database layer and make specific methods. Our service methods will be simple and clear methods for data retrieval. So start with a service folder and in there create the ComicService.cs file. Now let's create our methods.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using ComicalDelights.Core.Models;
+using ComicalDelights.Core.Repository;
+
+namespace ComicalDelights.Core.Service
+{
+    public class ComicService
+    {
+        ComicRepository comicRepository = new ComicRepository();
+        public ComicService()
+        {
+        }
+
+        public List<Comic> getAllComics()
+        {
+            return comicRepository.getAllComics();
+        }
+
+        public Comic getComicById(int id)
+        {
+            return comicRepository.getComicById(id);
+        }
+
+        public List<ComicSeries> getAllComicSeries()
+        {
+            return comicRepository.getAllComicSeries();
+        }
+
+        public List<Comic> getComicsBySeries(int id)
+        {
+            return comicRepository.getComicsBySeries(id);
+        }
+
+        public List<Comic> getSeriesX_Men()
+        {
+            return comicRepository.getComicsBySeries(1);
+        }
+
+        public List<Comic> getSeriesWalkingDead()
+        {
+            return comicRepository.getComicsBySeries(2);
+        }
+
+        public List<Comic> getSeriesBatman2016()
+        {
+            return comicRepository.getComicsBySeries(3);
+        }
+    }
+}
 
 ```
 
+As you can see most of the methods are similar to the methods in the repository, except a few. The last three are specific and make things easy on us. Rather than relying on memorizing the ids we can write a method, name it specifically, write the method call with the id once, and be done with that number forever.
+
+Alright, so now we've got our PCL written and all that is left is to bring it together in our iOS application.
+
+### Setting up our iOS application
+
+Now in your solution explorer close the ComicalDelights.Core project, you won't need to be in there anymore. Now we'll add the actual iOS project to our solution by left-clicking the solution and adding a new project. Select the Single View App template, name it ComicalDelightsIOS, deselect the iPad under devices, and keep everything else the same.
+
+Now once the project is generated you'll have a number of files there. There are plist files named info and entitlements, these are settings about your app. Info is information about the app's name, icons, build number, and so on. Entitlements are various additional services you can use in you application. The main.cs file is the application entry point, calls the app delegate, which lives in AppDelegate.cs, and uses UIKit. UIKit is a namespace found under Xamarin.iOS which is an API that is used to generate user interfaces in our app. Responding to application events is the primary purpose of the app delegate and as you can see there are some overridden methods with descriptions in them. Then there are the .storyboard files, these are the actual view you'll see on the device running the application. We have a ViewController.cs file which is a class that controls the view it's connected to. In that ViewController.cs there is a ViewController.designer and this is how the view from the story board links to the code in our view controller, this file is auto generated by Xamarin.
+
+With all that out of the way lets see the app working. Press fn + f6 to build and run the solution, if it worked correctly the simulator should have opened up to our blank app. Alright, now that we have our blank application canvas let's create our first view, the Comic details screen!
 
 ### Creating the first app view
 
