@@ -346,7 +346,7 @@ First, let's change the color from white by selecting the view and changing Back
 
 Let's give our image view an identifier using the properties. Under identity in properties change the name of the element to comicImage, and now if you open the ViewController.designer file you'll see it created a UIImageView property with the name we just gave our image.
 
-Now back to our storyboard, let's add the rest of the elements to our scene. We'll need three label elements, found in the toolbox, these will be the comic title, issue number, and price. Change the text via properties to 'comic title', 'issue number', and 'price', respectively. Then we'll issue names to the labels comicTitle, issueNumber, and comicPrice. Now we'll add the text view element; this will be the scrollable comic description. Give this text view the name 'comicDescription'.
+Now back to our storyboard, let's add the rest of the elements to our scene. We'll need three label elements, found in the toolbox, these will be the comic title, issue number, and price. Change the text via properties to 'comic title', 'issue number', and 'price', respectively. Then we'll issue names to the labels comicTitle, issueNumber, and comicPrice. Now we'll add the text view element; this will be the scrollable comic description. Give this text view the name 'issueDescription'.
 
 Lastly we'll add some buttons to the bottom. Change the first buttons text to Cancel, and name it cancelButton. The other will be our Add to cart button, change the text, and name it addToCartButton. With everything present the last thing I'm going to do is use a more descriptive view controller.
 
@@ -358,11 +358,92 @@ Delete the default view controller file, as we won't be needing it, and select t
 
 ### View meets logic
 
-Now we 
+Now that we have our view, with placeholder values, we can integrate our business logic to replace the placeholders with actual values. Real quick let's add our images folder for our comic covers, we'll do this within the iOS project. Now 'add files from folder' to add the images in visual studio <!-- TODO Feel free to use the images I used here -->. Okay, now we add our logic to our app but, where? Inside our view controller where all scene logic lives.
 
+Open up the ComicDetailsViewController.cs and we first will define a property. This property will be the selectedComic property, where we store the comic instance to be shown in our view. Notice that our ComicDetailViewController inherits from the UIViewController class, that means we have access to the base functionality of that class as well as any additional functionality we define. We can also change the inherited functionality using overrides, we will now use an override to change the ViewDidLoad method we've inherited.
 
+```csharp
+using Foundation;
+using System;
+using UIKit;
+using ComicalDelights.Core.Models;
 
+namespace ComicalDelightsIOS
+{
+    public partial class ComicDetailViewController : UIViewController
+    {
+        public Comic selectedComic
+        {
+            get;
+            set;
+        }
 
+        public ComicDetailViewController (IntPtr handle) : base (handle)
+        {
+        }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            DatabindUI();
+        }
+    }
+}
+```
+
+Now when the view loads, it executes the ViewDidLoad of the base class (the class from which we've inherited) and makes a call to a DatabindUI method. Except DatabindUI is not a method yet, so lets write the method.
+
+```csharp
+public override void ViewDidLoad()
+{
+    base.ViewDidLoad();
+    ComicService service = new ComicService();
+    selectedComic = service.getComicById(2);
+    DatabindUI();
+}
+
+public void DatabindUI()
+{
+    UIImage img = UIImage.FromFile("Images/" + selectedComic.imagePath + ".jpg");
+    comicImage.Image = img;
+    comicTitle.Text = selectedComic.title;
+    issueNumber.Text = selectedComic.issueNumber.ToString();
+    comicPrice.Text = selectedComic.price.ToString();
+    issueDescription.Text = selectedComic.issueDescription;
+}
+```
+
+Thanks to our designer file we can simply reference the elements in the scene using their names as variables, and change their properties. I also added an instance of our ComicService in the ViewDidLoad method, and used it to set our selected comic. Now if you run the solution you'll see that the view's placeholders are now actual comic information.
+
+Now that we have relevant information, let's see how we can respond to user events. So in our view controller we need to know how to tell if a button was clicked. Start by creating an AddButtonEvents method, now we can access our buttons via name here. If you look into the buttons you'll see properties, methods, and event handlers, which is what we need. We'll use the TouchUpInside listener for our event. Then all we need is to use a lambda[^1] expression to define the code we want to run upon the click.
+
+```csharp
+public void AddButtonEvents()
+{
+    addToCartButton.TouchUpInside += (sender, e) => 
+    {
+        // Event code here
+    };
+
+    cancelButton.TouchUpInside += (sender, e) => 
+    {
+        // Event code here  
+    };
+}
+```
+
+Let's say when the user clicks add to cart we want a message to pop up saying 'item(s) added to cart', and when the user clicks the 'ok' button for the message the message then closes.
+
+```csharp
+addToCartButton.TouchUpInside += (sender, e) => 
+{
+    var alert = UIAlertController.Create("Comical Delights", "Comic added to cart.", UIAlertControllerStyle.Alert);
+    alert.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, null));
+	PresentViewController(alert, true, null);
+};
+```
+
+Call the AddButtonEvents in the ViewDidLoad, and then boot up the app and test it out. When add to cart is clicked the event handler creates a new alert with a title and message, adds an 'ok' action, and then presents the alert to the user. For now we'll only define the addToCart button's event.
 
 
 
@@ -377,3 +458,5 @@ Now we
 
 
 ### Footnotes
+
+[^1]:lambdaexpressions
