@@ -358,7 +358,7 @@ Delete the default view controller file, as we won't be needing it, and select t
 
 ### View meets logic
 
-Now that we have our view, with placeholder values, we can integrate our business logic to replace the placeholders with actual values. Real quick let's add our images folder for our comic covers, we'll do this within the iOS project. Now 'add files from folder' to add the images in visual studio <!-- TODO Feel free to use the images I used here -->. Okay, now we add our logic to our app but, where? Inside our view controller where all scene logic lives.
+Now that we have our view, with placeholder values, we can integrate our business logic to replace the placeholders with actual values. Real quick let's add our images folder for our comic covers, we'll do this within the iOS project. Now 'add files from folder' to add the images in visual studio. Okay, now we add our logic to our app but, where? Inside our view controller where all scene logic lives.
 
 Open up the ComicDetailsViewController.cs and we first will define a property. This property will be the selectedComic property, where we store the comic instance to be shown in our view. Notice that our ComicDetailViewController inherits from the UIViewController class, that means we have access to the base functionality of that class as well as any additional functionality we define. We can also change the inherited functionality using overrides, we will now use an override to change the ViewDidLoad method we've inherited.
 
