@@ -445,16 +445,146 @@ addToCartButton.TouchUpInside += (sender, e) =>
 
 Call the AddButtonEvents in the ViewDidLoad, and then boot up the app and test it out. When add to cart is clicked the event handler creates a new alert with a title and message, adds an 'ok' action, and then presents the alert to the user. For now we'll only define the addToCart button's event.
 
-
-
-
-
+Congrats! Our detail view is looking good now. Now we somewhere and someway to list all the comics, this will be done using a new view called a table view.
 
 
 
 ### Table views
 
+What is a table view? A table view is basically a list with each item in the list being a row or cell. Using a table view we can display all of our comics on a table as a sort of menu. So lets get started.
+
+First you want to add a table view controller from the toolbox into the storyboard. Select the dock of the table and change the view controller to 'ComicTableViewController'. Now click on the cell, the white box towards the top of the scene, and in properties give the cell an identifier of comicCell. Now find the entry flag and ctrl + hold to drag it onto the table. Now our app will start on the table view but, our table is blank currently. To populate our table we'll need a data source.
+Let's define our data source class.
+
+### Data source
+
+Begin with a new 'Datasource' folder, and within that folder a new class called 'ComicDatasource'. This will be our custom data source class and we'll start with the bare bones.
+
+```csharp
+using System;
+using ComicalDelights.Core.Models;
+using UIKit;
+using System.Collections.Generic;
+
+namespace ComicalDelightsIOS.Datasource
+{
+    public class ComicDatasource: UITableViewDataSource
+    {
+        public List<Comic> Comics;
+        string CellIdentifier = "comicCell";
+
+        public ComicDatasource(List<Comic> comics)
+        {
+            Comics = comics;
+        }
+
+        public override nint RowsInSection(UITableView tableView, nint section)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+
+```
+
+So, our data source has an array of comics, the cell identifier that we set in our storyboard, and two overrides that we need to define. Currently the overrides are just going to throw an exception, so we'll define those methods. RowInSection will need to return the number of rows, and GetCell should return a cell for a row index.
+
+```csharp
+public override nint RowsInSection(UITableView tableView, nint section)
+{
+    return Comics.Count;
+}
+
+public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
+{
+    UITableViewCell cell = tableView.DequeueReusableCell(CellIdentifier);
+    Comic comic = Comics[indexPath.Row];
+
+    if (cell == null)
+    {
+        cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier);
+    }
+    cell.TextLabel.Text = comic.title;
+    cell.ImageView.Image = UIImage.FromFile("Images/" + comic.imagePath + ".jpg");
+    return cell;
+}
+```
+
+RowsInSection is understandable but in GetCell it begins by checking if the cell was already created and tries loading it. If it doesn't exist then it creates a new cell. Lastly we define the title and image to view in the table and return the cell.
+
+To get our table working we need to define the source and pass in our comics.
+
+```csharp
+using Foundation;
+using System;
+using UIKit;
+using ComicalDelightsIOS.Datasource;
+using ComicalDelights.Core.Service;
+
+namespace ComicalDelightsIOS
+{
+    public partial class ComicTableViewController : UITableViewController
+    {
+        ComicService comicService = new ComicService();
+        public ComicTableViewController (IntPtr handle) : base (handle)
+        {
+        }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            var comics = comicService.getAllComics();
+            var datasource = new ComicDatasource(comics);
+            TableView.DataSource = datasource;
+        }
+    }
+}
+```
+
+Run the application now and you'll see the table is filled with our comics.
+
+
+
+### Segues
+
+Segues are how you move from one scene to another, and will be how we move around our app. Enter the storyboard and select the cell in the table view. Hold ctrl and drag, a line should appear place it on the detail view and let go. Now you've created a segue leading from our cells to the detail view. Add a segue from our cancel button to the table view, and run the application. When running the app click a row and you'll be taken to the detail view. Then test the cancel button just to be sure. The segues work except the rows info doesn't transfer over, thats our next goal. Real quick select the gray segue bubble on the first segue and in properties give it the identifier 'ComicDetailSegue'. This will come into play in a bit.
+
+
+
 ### Sending data from one view to another
+
+So we need to pass the selected comic into our detail view, or more simply put, we need to define the selectedComic in our detail view controller. This is where the method PrepareForSegue comes into play, this method fires right before the segue occurs. So, what we're going to do is check if the segue is the segue we want, and if so we'll set the selected comic. Open up the table view controller.
+
+```csharp
+public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+{
+    if (segue.Identifier == "ComicDetailSegue")
+    {
+        var comicDetailViewController = segue.DestinationViewController as ComicDetailViewController;
+        if (comicDetailViewController != null)
+        {
+            var source = TableView.Source as ComicDatasource;
+            var rowPath = TableView.IndexPathForSelectedRow;
+            var item = source.Comics[rowPath.Row];
+            comicDetailViewController.selectedComic = item;
+        }
+    }
+}
+```
+
+Before testing don't forget to remove the following line from your ComicDetailViewController ViewDidLoad method.
+
+```csharp
+ComicService service = new ComicService();
+selectedComic = service.getComicById(2);
+```
+
+Now if you run your app you should see the comic you clicked on is the same shown in the view.
 
 
 ### Footnotes
