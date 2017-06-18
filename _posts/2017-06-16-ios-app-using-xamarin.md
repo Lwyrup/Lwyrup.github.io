@@ -342,7 +342,7 @@ Now open up the Main.storyboard and look around. In the editor area we have a bl
 
 First, let's change the color from white by selecting the view and changing Background in the properties. We'll use a light gray hex(#CCCCCC) for the background. Now lets add a image view for the comic, to do this go into your toolbox and find the image view. Drag from the tool box onto your scene, now you can select the image view, resize it, edit properties, and move it around the scene.
 
-<!-- TODO image of scene here -->
+![A picture of the final scene](/assets/images/comicaldelights_details.png "The finished view")
 
 Let's give our image view an identifier using the properties. Under identity in properties change the name of the element to comicImage, and now if you open the ViewController.designer file you'll see it created a UIImageView property with the name we just gave our image.
 
