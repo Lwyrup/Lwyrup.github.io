@@ -1,7 +1,8 @@
 ---
 title: "Simple iOS development using Xamarin"
-image: "/assets/images/.png"
+image: "/assets/images/xamarin-logo.png"
 ---
+<img src="{{ page.image }}" alt="Logo for Xamarin.">
 In todays world almost everyone has a smart phone of sorts, be it an Apple, Android, or Windows device. Its a large part of our everyday lives, from alarm clocks, to planners, to e-mail, and much more. These applications on our phones range from banking to gaming, and I'm going to teach you how to build a simple comic book store app using Xamarin.
 
 What is Xamarin? Xamarin is a mobile app development platform that allows you to write native iOS, Android, and Windows applications using a C#/.NET code base. This code base allows developers to reuse code when creating one app for different mobile platforms, as opposed to rewriting the entire app three times. All while allowing you access to the underlying platform's APIs and build native user interfaces. This is how we're going to create our app.
