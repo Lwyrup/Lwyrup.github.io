@@ -20,7 +20,7 @@ Last thing you'll need is Xcode for the simulator and the snazzy storyboard edit
 
 ### Getting started
 
-So let's say we're creating an app for a comic shop, called Comical Delights. The app, upon opening, will show a main menu with two options; browse comics, and find Comical Delights. When the user clicks the browse option he'll be taken to a list page of the comics, and when a single comic in that list is clicked it will show a detail page. The detail page will show the name, issue number, issue description, and the store's price. When find Comical Delights is clicked it will bring up a map for the user, showing the location of the store. With our app now briefly laid out we can begin. 
+So let's say we're creating an app for a comic shop, called Comical Delights. The app, upon opening, will show a list page of the comics, and when a single comic in that list is clicked it will show the detail page for that comic. The detail page will show the name, issue number, issue description, and the store's price. With our app now briefly laid out we can begin. 
 
 
 
@@ -586,7 +586,11 @@ selectedComic = service.getComicById(2);
 
 Now if you run your app you should see the comic you clicked on is the same shown in the view.
 
+### Summary 
+
+Great! We've accomplished our basic application. We've gone over Xamarin, PCLs, creating views and scenes, using table views, and passing data between views. There are many more things you could do to continue this project some ideas would be adding a navigation controller, adding constraints to your element, or using a modal view for the details view. Those are the few ideas I had. I hope this tutorial was somewhat helpful and not just ramblings of a madman, and thank you for reading.
+
 
 ### Footnotes
 
-[^1]:lambdaexpressions
+[^1]: A lambda expression is an anonymous function that you can use to create delegates or expression tree types.
