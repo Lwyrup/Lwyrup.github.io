@@ -2,22 +2,27 @@
 title: "Simple iOS development using Xamarin"
 image: "/assets/images/.png"
 ---
-What is Xamarin.
-
 In todays world almost everyone has a smart phone of sorts, be it an Apple, Android, or Windows device. Its a large part of our everyday lives, from alarm clocks, to planners, to e-mail, and much more. These applications on our phones range from banking to gaming, and I'm going to teach you how to build a simple comic book store app using Xamarin.
 
 What is Xamarin? Xamarin is a mobile app development platform that allows you to write native iOS, Android, and Windows applications using a C#/.NET code base. This code base allows developers to reuse code when creating one app for different mobile platforms, as opposed to rewriting the entire app three times. All while allowing you access to the underlying platform's APIs and build native user interfaces. This is how we're going to create our app.
 
+
+
 ### What you'll need to get started
+
 To get the ball rolling you'll need [Visual Studio](https://www.visualstudio.com/vs/mobile-app-development/), now you have your IDE and Xamarin. That's right Xamarin comes with all editions of Visual Studio for free now!
 
 <span>Note: </span>If you're not developing on a Mac, you'll need a networked Mac to provide the build. Admittedly I know little about the solutions, but [this](https://www.google.com/search?q=xamarin+ios+using+vm&rlz=1C5CHFA_enUS740US740&oq=xamarin+ios+using+vm&aqs=chrome..69i57j0j69i60.6301j0j4&sourceid=chrome&ie=UTF-8#q=xamarin+ios+without+mac) should give some helpful direction.
 
 Last thing you'll need is Xcode for the simulator and the snazzy storyboard editor.
 
+
+
 ### Getting started
 
 So let's say we're creating an app for a comic shop, called Comical Delights. The app, upon opening, will show a main menu with two options; browse comics, and find Comical Delights. When the user clicks the browse option he'll be taken to a list page of the comics, and when a single comic in that list is clicked it will show a detail page. The detail page will show the name, issue number, issue description, and the store's price. When find Comical Delights is clicked it will bring up a map for the user, showing the location of the store. With our app now briefly laid out we can begin. 
+
+
 
 ### Creating a PCL
 
@@ -317,6 +322,8 @@ As you can see most of the methods are similar to the methods in the repository,
 
 Alright, so now we've got our PCL written and all that is left is to bring it together in our iOS application.
 
+
+
 ### Setting up our iOS application
 
 Now in your solution explorer close the ComicalDelights.Core project, you won't need to be in there anymore. Now we'll add the actual iOS project to our solution by left-clicking the solution and adding a new project. Select the Single View App template, name it ComicalDelightsIOS, deselect the iPad under devices, and keep everything else the same.
@@ -325,9 +332,44 @@ Now once the project is generated you'll have a number of files there. There are
 
 With all that out of the way lets see the app working. Press fn + f6 to build and run the solution, if it worked correctly the simulator should have opened up to our blank app. Alright, now that we have our blank application canvas let's create our first view, the Comic details screen!
 
+
+
 ### Creating the first app view
 
-### The comic details view
+Before we start we need to add a reference to the business logic we wrote, we do this by clicking on References and selecting edit. Search for our applications .Core project, select it, and press ok to add our PCL.
+
+Now open up the Main.storyboard and look around. In the editor area we have a blank white screen, this a view. There is also a black bar at the bottom that says ViewController, this is the view controller and it contains our view. The entire box with both view and ViewController together is called a scene. A storyboard file allows many scenes and is much like a flow cart of scenes. To the left of the scene theres a gray flag pointer, this indicates the initial scene to be shown. Off to the right of the editor you have your Toolbox and Properties. The tool box is used to add new elements, such as buttons, text, etcetera, and new scenes. Properties allows you to edit the properties of the selected element, whether it be color, font, or the view controller class for a scene. With this basic explanation lets start editing our scene.
+
+First, let's change the color from white by selecting the view and changing Background in the properties. We'll use a light gray hex(#CCCCCC) for the background. Now lets add a image view for the comic, to do this go into your toolbox and find the image view. Drag from the tool box onto your scene, now you can select the image view, resize it, edit properties, and move it around the scene.
+
+<!-- TODO image of scene here -->
+
+Let's give our image view an identifier using the properties. Under identity in properties change the name of the element to comicImage, and now if you open the ViewController.designer file you'll see it created a UIImageView property with the name we just gave our image.
+
+Now back to our storyboard, let's add the rest of the elements to our scene. We'll need three label elements, found in the toolbox, these will be the comic title, issue number, and price. Change the text via properties to 'comic title', 'issue number', and 'price', respectively. Then we'll issue names to the labels comicTitle, issueNumber, and comicPrice. Now we'll add the text view element; this will be the scrollable comic description. Give this text view the name 'comicDescription'.
+
+Lastly we'll add some buttons to the bottom. Change the first buttons text to Cancel, and name it cancelButton. The other will be our Add to cart button, change the text, and name it addToCartButton. With everything present the last thing I'm going to do is use a more descriptive view controller.
+
+Delete the default view controller file, as we won't be needing it, and select the view controller in our scene. Under identity focus on the class field, change the text to ComicDetailViewController, hit enter, and then Visual Studio will create that view controller file for you.
+
+<span>Note: </span>you may have to change something in your scene to update the ComicDetailViewController.designer.
+
+
+
+### View meets logic
+
+Now we 
+
+
+
+
+
+
+
+
+
+
+
 
 ### Table views
 
