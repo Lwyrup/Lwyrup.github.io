@@ -1,9 +1,9 @@
 ---
 title: "TypeScript, what and why?"
-image: "/assets/images/"
+image: "/assets/images/typescript.png"
 ---
-<img src="{{ page.image }}" alt="">
-JavaScript is the client-side scripting language king, but it, like anything else, is not perfect. Hence the creation of various libraries, frameworks, and mini-languages that compile to normal JavaScript. TypeScript is one of these mini-languages. It extends features to JavaScript, gives all the benefits of ES6, and offers a C# like syntax. So, lets get into the specifics of what TypeScript extends to JavaScript. 
+<img src="{{ page.image }}" alt="TypeScript's logo.">
+JavaScript is the client-side scripting language king, but it, like anything else, is not perfect. Hence the creation of various libraries, frameworks, and mini-languages that compile to normal JavaScript. TypeScript is one of these mini-languages. It extends features to JavaScript and gives all the benefits of ES6. 
 
 
 ### Getting started with TypeScript
