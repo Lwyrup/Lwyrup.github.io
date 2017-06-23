@@ -2845,6 +2845,9 @@ html {
 .c1 {
   color: darkgray; }
 
+.kr {
+  color: orange; }
+
 .footnote {
   position: relative;
   bottom: 5px;
