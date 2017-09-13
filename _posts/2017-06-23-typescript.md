@@ -11,6 +11,7 @@ JavaScript is the client-side scripting language king, but it, like anything els
 Getting up and running is fairly simple, you can get TypeScript installed using Visual Studio's plug-ins, or using npm[^1]. For npm you'll want to run 'npm install -g typescript' to install, and 'tsc {{filename}}.ts' to compile your TypeScript to JavaScript. 
 
 <span>Note:</span> TypeScript files use the file extension .ts and when referencing your TypeScript files in HTML, refer to the compiled .js file, not the .ts file.
+{:.callout}
 
 
 ### Type Annotations
