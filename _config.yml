@@ -26,7 +26,7 @@ repository: Lwyrup/Lwyrup.github.com
 
 # Build settings - DO NOT EDIT, UNLESS YOU KNOW WHAT YOU'RE DOING.
 markdown: kramdown
-gems:
+plugins:
   - jekyll-feed
 exclude:
   - Gemfile
