@@ -5,7 +5,7 @@ window.addEventListener("load",function(){
 	
 	status = 0;
 
-	hamburger.addEventListener("click", prevent)
+	hamburger.addEventListener("click", prevent);
 	hamburger.addEventListener("click",shownav);
 
 	function shownav(){
