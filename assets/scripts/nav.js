@@ -4,22 +4,17 @@ window.addEventListener("load",function(){
 	const NAVBAR = $(".dropNav")[0];
 	var navActive = false;
 
-	HAMBURGER.addEventListener("click", prevent);
-	HAMBURGER.addEventListener("click",shownav);
+	$(HAMBURGER).click(shownav);
 
 	function shownav(){
-		distance = document.getElementsByClassName("headerBg")[0].clientHeight;
+		event.preventDefault();
 		if (!navActive){
-			NAVBAR.style.top = distance + "px";
+			NAVBAR.style.top = $(".headerBg")[0].clientHeight + "px";
 			navActive = true;
 		}
 		else{
 			NAVBAR.style.top = "-10px";
 			navActive = false;
 		};
-	};
-
-	function prevent(){
-		event.preventDefault();
 	};
 });
