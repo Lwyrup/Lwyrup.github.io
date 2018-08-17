@@ -6,8 +6,6 @@ window.addEventListener("load",function(){
 	$(window).resize(adjustNavOnResize);
 	$(HAMBURGER).click(toggleNav);
 
-	//TODO: In .navBar's css remove the top and transition properties. Add display none
-
 	function toggleNav(){
 		event.preventDefault();
 		$(NAVBAR).animate({top: 'toggle'}, 300);
