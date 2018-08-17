@@ -2,9 +2,12 @@ window.addEventListener("load",function(){
 
 	const HAMBURGER = $(".headerInfo__hamburger")[0];
 	const NAVBAR = $(".dropNav")[0];
+	var navActive = true;
 
 	$(window).resize(adjustNavOnResize);
 	$(HAMBURGER).click(toggleNav);
+
+	//TODO: In .navBar's css remove the top and transition properties. Add display none
 
 	function toggleNav(){
 		event.preventDefault();
@@ -12,6 +15,6 @@ window.addEventListener("load",function(){
 	};
 
 	function adjustNavOnResize(){	
-		NAVBAR.style.top = $(".headerBg")[0].clientHeight + "px";	
+		$(NAVBAR).css("top", $(".headerBg")[0].clientHeight + "px");	
 	};
 });
