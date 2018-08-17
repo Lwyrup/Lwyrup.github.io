@@ -2,7 +2,6 @@ window.addEventListener("load",function(){
 
 	const HAMBURGER = $(".headerInfo__hamburger")[0];
 	const NAVBAR = $(".dropNav")[0];
-	var navActive = true;
 
 	$(window).resize(adjustNavOnResize);
 	$(HAMBURGER).click(toggleNav);
