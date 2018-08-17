@@ -4,7 +4,14 @@ window.addEventListener("load",function(){
 	const NAVBAR = $(".dropNav")[0];
 	var navActive = false;
 
+	$(window).resize(adjustNavOnResize);
 	$(HAMBURGER).click(shownav);
+
+	function adjustNavOnResize(){
+		if (navActive){
+			NAVBAR.style.top = $(".headerBg")[0].clientHeight + "px";	
+		}
+	}
 
 	function shownav(){
 		event.preventDefault();
