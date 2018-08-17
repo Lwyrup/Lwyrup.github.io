@@ -1,7 +1,7 @@
 window.addEventListener("load",function(){
 
-	const HAMBURGER = $(".headerInfo__hamburger")[0];
-	const NAVBAR = $(".dropNav")[0];
+	const HAMBURGER = $(".headerInfo__hamburger");
+	const NAVBAR = $(".dropNav");
 
 	$(window).resize(adjustNavOnResize);
 	$(HAMBURGER).click(toggleNav);
@@ -13,7 +13,7 @@ window.addEventListener("load",function(){
 		$(NAVBAR).animate({top: 'toggle'}, 300);
 	};
 
-	function adjustNavOnResize(){	
-		$(NAVBAR).css("top", $(".headerBg")[0].clientHeight + "px");	
+	function adjustNavOnResize(){
+		$(NAVBAR).css("top", $(".headerBg").innerHeight() + "px");	
 	};
 });
