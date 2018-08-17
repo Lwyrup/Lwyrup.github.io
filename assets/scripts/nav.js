@@ -1,22 +1,21 @@
 window.addEventListener("load",function(){
 
-	hamburger = document.getElementsByClassName("headerInfo__hamburger")[0];
-	navbar = document.getElementsByClassName("dropNav")[0];
-	
-	status = 0;
+	const HAMBURGER = $(".headerInfo__hamburger")[0];
+	const NAVBAR = $(".dropNav")[0];
+	var navActive = false;
 
-	hamburger.addEventListener("click", prevent);
-	hamburger.addEventListener("click",shownav);
+	HAMBURGER.addEventListener("click", prevent);
+	HAMBURGER.addEventListener("click",shownav);
 
 	function shownav(){
 		distance = document.getElementsByClassName("headerBg")[0].clientHeight;
-		if (status == 0){
-			navbar.style.top = distance + "px";
-			status = 1;
+		if (!navActive){
+			NAVBAR.style.top = distance + "px";
+			navActive = true;
 		}
 		else{
-			navbar.style.top = "-10px";
-			status = 0;
+			NAVBAR.style.top = "-10px";
+			navActive = false;
 		};
 	};
 
